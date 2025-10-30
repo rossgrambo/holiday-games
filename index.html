@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Games - Gallery</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Holiday Games</h1>
+            <p>Touch-friendly games for tablets</p>
+        </header>
+        
+        <main class="gallery">
+            <div class="game-grid">
+                <div class="game-card" data-game="run">
+                    <div class="game-icon">🏃‍♂️</div>
+                    <h3>Run!</h3>
+                    <p>Escape the graveyard before the zombie catches you!</p>
+                    <button class="play-btn">Play Now</button>
+                </div>
+                
+                <div class="game-card" data-game="jump">
+                    <div class="game-icon">💀</div>
+                    <h3>Jump!</h3>
+                    <p>Help the skeleton jump over jack-o'-lanterns to reach safety!</p>
+                    <button class="play-btn">Play Now</button>
+                </div>
+                
+                <div class="game-card" data-game="taxes">
+                    <div class="game-icon">📋</div>
+                    <h3>Taxes</h3>
+                    <p>Fill out your tax form! The ultimate test of patience and accuracy!</p>
+                    <button class="play-btn">Play Now</button>
+                </div>
+                
+                <!-- Placeholder for future games -->
+                <div class="game-card coming-soon">
+                    <div class="game-icon">🎯</div>
+                    <h3>Coming Soon</h3>
+                    <p>More games on the way!</p>
+                    <button class="play-btn" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="main.js"></script>
+    <script src="scripts/gallery.js"></script>
+</body>
+</html>

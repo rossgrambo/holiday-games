@@ -1,0 +1,40 @@
+<!-- Reusable Difficulty Selection Template -->
+<!-- This template should be inserted into games that need difficulty selection -->
+<!-- Replace {{GAME_TITLE}}, {{GAME_ICON}}, and {{GAME_DESCRIPTION}} with actual values -->
+
+<div id="difficulty-screen" class="screen">
+    <div class="difficulty-content">
+        <h1>{{GAME_ICON}} {{GAME_TITLE}}</h1>
+        <p>{{GAME_DESCRIPTION}}</p>
+        
+        <div class="difficulty-grid">
+            <button class="difficulty-btn" data-difficulty="toddler">
+                <span class="difficulty-icon">🍼</span>
+                <span class="difficulty-name">Toddler</span>
+                <span class="difficulty-desc">Nice and easy</span>
+            </button>
+            
+            <button class="difficulty-btn" data-difficulty="child">
+                <span class="difficulty-icon">👶</span>
+                <span class="difficulty-name">Child</span>
+                <span class="difficulty-desc">Getting tricky</span>
+            </button>
+            
+            <button class="difficulty-btn" data-difficulty="adult">
+                <span class="difficulty-icon">👨</span>
+                <span class="difficulty-name">Adult</span>
+                <span class="difficulty-desc">Real challenge</span>
+            </button>
+            
+            <button class="difficulty-btn hidden" data-difficulty="crazy" id="crazy-btn">
+                <span class="difficulty-icon">💀</span>
+                <span class="difficulty-name">CRAZY</span>
+                <span class="difficulty-desc">Impossible!</span>
+            </button>
+        </div>
+        
+        <button class="back-btn" onclick="window.location.href='../index.html'">
+            ← Back to Gallery
+        </button>
+    </div>
+</div>

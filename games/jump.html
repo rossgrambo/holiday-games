@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump! - Holiday Games</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/jump-game.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Difficulty Selection Screen -->
+        <div id="difficulty-screen" class="screen">
+            <div class="difficulty-content">
+                <h1>💀 Jump!</h1>
+                <p>Help the skeleton jump over jack-o'-lanterns to reach safety!</p>
+                
+                <div class="difficulty-grid">
+                    <button class="difficulty-btn" data-difficulty="toddler">
+                        <span class="difficulty-icon">🍼</span>
+                        <span class="difficulty-name">Toddler</span>
+                        <span class="difficulty-desc">Nice and easy</span>
+                    </button>
+                    
+                    <button class="difficulty-btn" data-difficulty="child">
+                        <span class="difficulty-icon">👶</span>
+                        <span class="difficulty-name">Child</span>
+                        <span class="difficulty-desc">Getting tricky</span>
+                    </button>
+                    
+                    <button class="difficulty-btn" data-difficulty="adult">
+                        <span class="difficulty-icon">👨</span>
+                        <span class="difficulty-name">Adult</span>
+                        <span class="difficulty-desc">Real challenge</span>
+                    </button>
+                    
+                    <button class="difficulty-btn hidden" data-difficulty="crazy" id="crazy-btn">
+                        <span class="difficulty-icon">💀</span>
+                        <span class="difficulty-name">CRAZY</span>
+                        <span class="difficulty-desc">Impossible!</span>
+                    </button>
+                </div>
+                
+                <button class="back-btn" onclick="window.location.href='../index.html'">
+                    ← Back to Gallery
+                </button>
+            </div>
+        </div>
+        
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <canvas id="game-canvas"></canvas>
+            
+            <!-- Game UI -->
+            <div class="game-ui">
+                <div class="score-display">
+                    <span>Distance: <span id="distance">0</span> ft</span>
+                    <span>Speed: <span id="speed">0</span> ft/s</span>
+                </div>
+                
+                <div class="jump-instruction" id="jump-instruction">
+                    🦴 TAP TO JUMP! 🦴
+                </div>
+            </div>
+            
+            <!-- Jump Controls -->
+            <div class="jump-controls">
+                <div class="jump-area" id="jump-control">
+                    <div class="jump-indicator">TAP TO JUMP</div>
+                </div>
+            </div>
+            
+            <!-- Pause Button -->
+            <button class="pause-btn" id="pause-btn">⏸️</button>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="game-over-screen" class="screen hidden">
+            <div class="game-over-content">
+                <h2 id="game-over-title">Game Over!</h2>
+                <div id="game-over-message"></div>
+                <div class="game-stats">
+                    <p>Distance Traveled: <span id="final-distance">0</span> ft</p>
+                    <p>Time Survived: <span id="final-time">0</span>s</p>
+                    <p>Difficulty: <span id="final-difficulty">Normal</span></p>
+                    <p>Jack-o'-lanterns Jumped: <span id="final-jumps">0</span></p>
+                </div>
+                
+                <div class="game-over-buttons">
+                    <button class="game-btn" id="restart-btn">Play Again</button>
+                    <button class="game-btn secondary" id="difficulty-btn">Change Difficulty</button>
+                    <button class="game-btn secondary" onclick="window.location.href='../index.html'">
+                        Back to Gallery
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../main.js"></script>
+    <script src="../scripts/jump-game.js"></script>
+</body>
+</html>
