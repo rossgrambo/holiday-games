@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a0d2e 0%, #2d1b47 50%, #0f0f23 100%);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -48,28 +48,33 @@ header p {
 }
 
 .game-card {
-    background: white;
+    background: linear-gradient(135deg, #2a1a3e 0%, #3d2b52 100%);
+    border: 2px solid #ff6b35;
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    color: #f8f8ff;
 }
 
 .game-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+    border-color: #ff8c42;
 }
 
 .game-card.coming-soon {
     opacity: 0.6;
     cursor: default;
+    border-color: #666;
 }
 
 .game-card.coming-soon:hover {
     transform: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    border-color: #666;
 }
 
 .game-icon {
@@ -84,20 +89,21 @@ header p {
 .game-card h3 {
     font-size: 2em;
     margin-bottom: 15px;
-    color: #333;
+    color: #ff8c42;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .game-card p {
     font-size: 1.1em;
-    color: #666;
+    color: #e2e8f0;
     margin-bottom: 25px;
     line-height: 1.4;
 }
 
 .play-btn {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(135deg, #ff6b35, #d63031);
     color: white;
-    border: none;
+    border: 2px solid #ff8c42;
     padding: 15px 30px;
     font-size: 1.2em;
     border-radius: 50px;
@@ -105,11 +111,13 @@ header p {
     transition: all 0.3s ease;
     font-weight: bold;
     min-width: 150px;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .play-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+    background: linear-gradient(135deg, #ff8c42, #ff6b35);
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
 }
 
 .play-btn:disabled {
@@ -161,7 +169,7 @@ header p {
 }
 
 .reward-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #ff6b35, #d63031);
     color: white;
     border: none;
     padding: 12px 25px;

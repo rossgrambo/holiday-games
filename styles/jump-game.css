@@ -5,7 +5,7 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(135deg, #2d1b43 0%, #4a2c5a 50%, #6b3e8a 100%);
+    background: linear-gradient(135deg, #1a0d2e 0%, #2d1b47 50%, #0f0f23 100%);
 }
 
 .screen {
@@ -121,7 +121,7 @@
     width: 100%;
     height: 100%;
     display: block;
-    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f172a 100%);
+    background: linear-gradient(180deg, #0f0a1a 0%, #1a0d2e 30%, #2d1b47 70%, #111827 100%);
 }
 
 .game-ui {
@@ -149,16 +149,18 @@
     top: 80px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255,165,0,0.9);
-    color: white;
-    padding: 10px 20px;
+    background: rgba(255, 107, 53, 0.95);
+    color: #fef2f2;
+    padding: 12px 25px;
+    border: 2px solid #ff8c42;
     border-radius: 25px;
     font-weight: bold;
     font-size: 1.1em;
     opacity: 1;
-    animation: bounceInstruction 2s ease-in-out infinite;
+    animation: spookyBounce 2s ease-in-out infinite;
     pointer-events: none;
     transition: opacity 0.5s ease;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
 }
 
 .jump-instruction.hidden {
@@ -181,7 +183,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,165,0,0.05);
+    background: rgba(255, 107, 53, 0.05);
     border: 2px solid transparent;
     transition: all 0.2s ease;
     user-select: none;
@@ -189,21 +191,24 @@
 }
 
 .jump-area.active {
-    background: rgba(255,165,0,0.15);
-    border-color: rgba(255,165,0,0.3);
+    background: rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.3);
+    box-shadow: inset 0 0 20px rgba(255, 107, 53, 0.2);
 }
 
 .jump-indicator {
     font-size: 2em;
-    color: rgba(255,165,0,0.6);
+    color: rgba(255, 140, 66, 0.6);
     pointer-events: none;
     transition: all 0.2s ease;
     font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
 }
 
 .jump-area.active .jump-indicator {
-    color: rgba(255,165,0,0.9);
+    color: rgba(255, 140, 66, 0.9);
     transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
 }
 
 .pause-btn {
@@ -260,15 +265,16 @@
 }
 
 .game-btn {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    background: linear-gradient(135deg, #ff6b35, #d63031);
     color: white;
-    border: none;
+    border: 2px solid #ff8c42;
     padding: 15px 30px;
     font-size: 1.2em;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .game-btn.secondary {
@@ -282,6 +288,17 @@
 }
 
 /* Animations */
+@keyframes spookyBounce {
+    0%, 100% { 
+        transform: translateX(-50%) translateY(0px);
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+    }
+    50% { 
+        transform: translateX(-50%) translateY(-10px);
+        box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
+    }
+}
+
 @keyframes bounceInstruction {
     0%, 100% { 
         transform: translateX(-50%) translateY(0px); 

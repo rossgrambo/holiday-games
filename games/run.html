@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Run! - Holiday Games</title>
+    <title>Zombie Escape! - Halloween Games</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/run-game.css">
 </head>
@@ -12,32 +12,32 @@
         <!-- Difficulty Selection Screen -->
         <div id="difficulty-screen" class="screen">
             <div class="difficulty-content">
-                <h1>🏃‍♂️ Run!</h1>
-                <p>Escape the graveyard before the zombie catches you!</p>
+                <h1>🧟‍♂️ Zombie Escape!</h1>
+                <p>Sprint through the haunted graveyard before the undead horde catches you!</p>
                 
                 <div class="difficulty-grid">
                     <button class="difficulty-btn" data-difficulty="toddler">
-                        <span class="difficulty-icon">🍼</span>
-                        <span class="difficulty-name">Toddler</span>
-                        <span class="difficulty-desc">Nice and easy</span>
+                        <span class="difficulty-icon">👻</span>
+                        <span class="difficulty-name">Friendly Ghost</span>
+                        <span class="difficulty-desc">Slow shamble</span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="child">
-                        <span class="difficulty-icon">👶</span>
-                        <span class="difficulty-name">Child</span>
-                        <span class="difficulty-desc">Getting tricky</span>
+                        <span class="difficulty-icon">🎃</span>
+                        <span class="difficulty-name">Jack-o'-Lantern</span>
+                        <span class="difficulty-desc">Getting spooky</span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="adult">
-                        <span class="difficulty-icon">👨</span>
-                        <span class="difficulty-name">Adult</span>
-                        <span class="difficulty-desc">Real challenge</span>
+                        <span class="difficulty-icon">🧟</span>
+                        <span class="difficulty-name">Zombie Horde</span>
+                        <span class="difficulty-desc">Real terror</span>
                     </button>
                     
                     <button class="difficulty-btn hidden" data-difficulty="crazy" id="crazy-btn">
                         <span class="difficulty-icon">💀</span>
-                        <span class="difficulty-name">CRAZY</span>
-                        <span class="difficulty-desc">Impossible!</span>
+                        <span class="difficulty-name">NIGHTMARE</span>
+                        <span class="difficulty-desc">Pure horror!</span>
                     </button>
                 </div>
                 
@@ -59,7 +59,7 @@
                 </div>
                 
                 <div class="zombie-warning" id="zombie-warning">
-                    ⚠️ ZOMBIE APPROACHING! ⚠️
+                    🧟 THE UNDEAD ARE COMING! 🧟
                 </div>
             </div>
             
@@ -101,5 +101,6 @@
     
     <script src="../main.js"></script>
     <script src="../scripts/run-game.js"></script>
+    <script src="../scripts/falling-sprites.js"></script>
 </body>
 </html>

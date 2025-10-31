@@ -14,11 +14,7 @@ class TaxesGame {
     
     initializeEventListeners() {
         // Difficulty selection
-        document.querySelectorAll('.difficulty-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                this.selectDifficulty(e.target.closest('.difficulty-btn').dataset.difficulty);
-            });
-        });
+        this.setupDifficultySelection();
         
         // Game controls
         document.getElementById('submit-btn').addEventListener('click', () => this.submitForm());
@@ -33,6 +29,28 @@ class TaxesGame {
             if (this.clickCount >= 10) {
                 this.unlockCrazyDifficulty();
             }
+        });
+    }
+    
+    setupDifficultySelection() {
+        const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+        
+        difficultyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const difficulty = btn.dataset.difficulty;
+                
+                // Special handling for CRAZY button
+                if (difficulty === 'crazy' && btn.classList.contains('hidden')) {
+                    // Reveal CRAZY mode
+                    btn.classList.remove('hidden');
+                    btn.classList.add('revealed');
+                    return;
+                }
+                
+                if (difficulty && !btn.classList.contains('hidden')) {
+                    this.selectDifficulty(difficulty);
+                }
+            });
         });
     }
     
@@ -76,9 +94,9 @@ class TaxesGame {
         document.body.classList.remove('crazy-mode');
         
         // Show all static text, hide all inputs
-        document.querySelectorAll('.static-text').forEach(el => el.classList.remove('hidden'));
+        document.querySelectorAll('.static-text').forEach(el => el.classList.remove('display-none'));
         document.querySelectorAll('input').forEach(el => {
-            el.classList.add('hidden');
+            el.classList.add('display-none');
             el.classList.remove('filled');
             el.value = '';
         });
@@ -145,8 +163,8 @@ class TaxesGame {
         const inputElement = document.getElementById(fieldId + '-input');
         
         if (staticElement && inputElement) {
-            staticElement.classList.add('hidden');
-            inputElement.classList.remove('hidden');
+            staticElement.classList.add('display-none');
+            inputElement.classList.remove('display-none');
             
             // Clear the input value completely - no placeholder for added challenge
             inputElement.value = '';

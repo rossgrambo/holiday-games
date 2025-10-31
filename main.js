@@ -2,7 +2,7 @@
 
 // Global reward function that games can call when user wins
 function reward(gameName, score = 0, difficulty = 'normal') {
-    console.log(`🎉 Congratulations! You won ${gameName}!`);
+    console.log(`� Spook-tacular! You conquered ${gameName}!`);
     
     // Show victory animation/message
     showRewardModal(gameName, score, difficulty);
@@ -20,13 +20,13 @@ function showRewardModal(gameName, score, difficulty) {
     modal.className = 'reward-modal';
     modal.innerHTML = `
         <div class="reward-content">
-            <div class="reward-animation">🎉</div>
-            <h2>Victory!</h2>
-            <p>You completed <strong>${gameName}</strong>!</p>
-            ${score > 0 ? `<p>Score: <strong>${score}</strong></p>` : ''}
-            <p>Difficulty: <strong>${difficulty}</strong></p>
-            <button class="reward-btn" onclick="closeRewardModal()">Continue</button>
-            <button class="reward-btn secondary" onclick="window.location.href='index.html'">Back to Gallery</button>
+            <div class="reward-animation">�</div>
+            <h2>Spook-tacular Victory!</h2>
+            <p>You've conquered the haunting challenge of <strong>${gameName}</strong>!</p>
+            ${score > 0 ? `<p>Haunting Score: <strong>${score}</strong></p>` : ''}
+            <p>Spooky Difficulty: <strong>${difficulty}</strong></p>
+            <button class="reward-btn" onclick="closeRewardModal()">Continue Haunting</button>
+            <button class="reward-btn secondary" onclick="window.location.href='index.html'">Return to Coven</button>
         </div>
     `;
     
@@ -49,14 +49,14 @@ function closeRewardModal() {
 
 function storeAchievement(gameName, score, difficulty) {
     try {
-        const achievements = JSON.parse(localStorage.getItem('holidayGamesAchievements') || '[]');
+        const achievements = JSON.parse(localStorage.getItem('halloweenGamesAchievements') || '[]');
         achievements.push({
             game: gameName,
             score: score,
             difficulty: difficulty,
             timestamp: new Date().toISOString()
         });
-        localStorage.setItem('holidayGamesAchievements', JSON.stringify(achievements));
+        localStorage.setItem('halloweenGamesAchievements', JSON.stringify(achievements));
     } catch (e) {
         console.log('Could not store achievement:', e);
     }

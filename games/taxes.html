@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxes - Holiday Games</title>
+    <title>Witch's Forms - Halloween Games</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/taxes-game.css">
 </head>
@@ -12,32 +12,32 @@
         <!-- Difficulty Selection Screen -->
         <div id="difficulty-screen" class="screen">
             <div class="difficulty-content">
-                <h1>📋 Taxes</h1>
-                <p>Fill out your tax form! The ultimate test of patience and accuracy!</p>
+                <h1>🧙‍♀️ Witch's Forms</h1>
+                <p>Help the witch complete her magical paperwork before the stroke of midnight!</p>
                 
                 <div class="difficulty-grid">
                     <button class="difficulty-btn" data-difficulty="toddler">
-                        <span class="difficulty-icon">🍼</span>
-                        <span class="difficulty-name">Toddler</span>
-                        <span class="difficulty-desc">Just your name</span>
+                        <span class="difficulty-icon">👻</span>
+                        <span class="difficulty-name">Apprentice</span>
+                        <span class="difficulty-desc">Simple spells</span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="child">
-                        <span class="difficulty-icon">👶</span>
-                        <span class="difficulty-name">Child</span>
-                        <span class="difficulty-desc">Name and income</span>
+                        <span class="difficulty-icon">🎃</span>
+                        <span class="difficulty-name">Novice Witch</span>
+                        <span class="difficulty-desc">Basic potions</span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="adult">
-                        <span class="difficulty-icon">👨</span>
-                        <span class="difficulty-name">Adult</span>
-                        <span class="difficulty-desc">Standard form</span>
+                        <span class="difficulty-icon">🧙‍♀️</span>
+                        <span class="difficulty-name">Master Witch</span>
+                        <span class="difficulty-desc">Complex magic</span>
                     </button>
                     
                     <button class="difficulty-btn hidden" data-difficulty="crazy" id="crazy-btn">
                         <span class="difficulty-icon">💀</span>
-                        <span class="difficulty-name">CRAZY</span>
-                        <span class="difficulty-desc">Every field!</span>
+                        <span class="difficulty-name">DARK SORCERER</span>
+                        <span class="difficulty-desc">Forbidden arts!</span>
                     </button>
                 </div>
                 
@@ -51,160 +51,160 @@
         <div id="game-screen" class="screen hidden">
             <div class="tax-form-container">
                 <div class="form-header">
-                    <h2>Form W-2 Wage and Tax Statement</h2>
-                    <div class="tax-year">2024</div>
+                    <h2>✨ Magical Registry & Spell License Application ✨</h2>
+                    <div class="tax-year">Halloween 2025</div>
                 </div>
                 
                 <div class="form-content">
-                    <!-- Employee Information Section -->
+                    <!-- Witch Information Section -->
                     <div class="form-section employee-info">
-                        <h3>Employee Information</h3>
+                        <h3>🧙‍♀️ Witch Information</h3>
                         <div class="form-row">
                             <div class="form-field">
-                                <label>1. Employee's name</label>
-                                <span class="static-text" id="employee-name">John Q. Taxpayer</span>
-                                <input type="text" id="employee-name-input" class="hidden" placeholder="Enter your name">
+                                <label>1. Witch's magical name</label>
+                                <span class="static-text" id="employee-name">Morticia Spellweaver</span>
+                                <input type="text" id="employee-name-input" class="display-none" placeholder="Enter your magical name">
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-field">
-                                <label>2. Employee's address</label>
+                                <label>2. Coven's address</label>
                                 <div class="address-block">
-                                    <span class="static-text" id="employee-address">123 Main Street<br>Anytown, ST 12345</span>
-                                    <input type="text" id="employee-address-input" class="hidden" placeholder="Enter your address">
+                                    <span class="static-text" id="employee-address">13 Haunted Hollow Lane<br>Salem, MA 01970</span>
+                                    <input type="text" id="employee-address-input" class="display-none" placeholder="Enter your coven's address">
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Employer Information Section -->
+                    <!-- Magical Organization Section -->
                     <div class="form-section employer-info">
-                        <h3>Employer Information</h3>
+                        <h3>🏚️ Magical Organization Information</h3>
                         <div class="form-row">
                             <div class="form-field">
-                                <label>3. <span class="editable-word">Employer's</span> name and address</label>
+                                <label>3. <span class="editable-word">Coven's</span> name and address</label>
                                 <div class="address-block">
-                                    <span class="static-text" id="employer-name">Holiday Games Inc.</span>
-                                    <input type="text" id="employer-name-input" class="hidden" placeholder="Employer name">
-                                    <span class="static-text" id="employer-address">456 Business Ave<br>Corporate City, ST 67890</span>
-                                    <input type="text" id="employer-address-input" class="hidden" placeholder="Employer address">
+                                    <span class="static-text" id="employer-name">The Midnight Spell Society</span>
+                                    <input type="text" id="employer-name-input" class="display-none" placeholder="Coven name">
+                                    <span class="static-text" id="employer-address">666 Witches Circle<br>Spooktown, MA 13131</span>
+                                    <input type="text" id="employer-address-input" class="display-none" placeholder="Coven address">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-field half">
-                                <label>4. <span class="editable-word">Employer</span> identification number</label>
-                                <span class="static-text" id="employer-ein">12-3456789</span>
-                                <input type="text" id="employer-ein-input" class="hidden" placeholder="12-3456789">
+                                <label>4. <span class="editable-word">Coven</span> identification number</label>
+                                <span class="static-text" id="employer-ein">13-1313131</span>
+                                <input type="text" id="employer-ein-input" class="display-none" placeholder="13-1313131">
                             </div>
                             <div class="form-field half">
-                                <label>5. <span class="editable-word">Employee's</span> social security number</label>
-                                <span class="static-text" id="employee-ssn">***-**-****</span>
-                                <input type="text" id="employee-ssn-input" class="hidden" placeholder="Last 4 digits only">
+                                <label>5. <span class="editable-word">Witch's</span> license number</label>
+                                <span class="static-text" id="employee-ssn">***-**-1313</span>
+                                <input type="text" id="employee-ssn-input" class="display-none" placeholder="Last 4 digits only">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Wages and Tax Information -->
+                    <!-- Magical Earnings Information -->
                     <div class="form-section wages-info">
-                        <h3><span class="editable-word">Wages</span> and Tax Information</h3>
+                        <h3>💰 <span class="editable-word">Magical</span> Earnings Information</h3>
                         <div class="wages-grid">
                             <div class="form-field">
-                                <label>6. <span class="editable-word">Wages</span>, tips, other compensation</label>
-                                <span class="static-text" id="wages">$45,000.00</span>
-                                <input type="text" id="wages-input" class="hidden" placeholder="$0.00">
+                                <label>6. <span class="editable-word">Spell</span> casting fees, potions, other compensation</label>
+                                <span class="static-text" id="wages">13,000 gold coins</span>
+                                <input type="text" id="wages-input" class="display-none" placeholder="0 gold coins">
                             </div>
                             
                             <div class="form-field">
-                                <label>7. <span class="editable-word">Federal</span> income tax withheld</label>
-                                <span class="static-text" id="federal-tax">$6,750.00</span>
-                                <input type="text" id="federal-tax-input" class="hidden" placeholder="$0.00">
+                                <label>7. <span class="editable-word">Magical</span> licensing fees withheld</label>
+                                <span class="static-text" id="federal-tax">1,337 gold coins</span>
+                                <input type="text" id="federal-tax-input" class="display-none" placeholder="0 gold coins">
                             </div>
                             
                             <div class="form-field">
-                                <label>8. <span class="editable-word">Social</span> security wages</label>
-                                <span class="static-text" id="ss-wages">$45,000.00</span>
-                                <input type="text" id="ss-wages-input" class="hidden" placeholder="$0.00">
+                                <label>8. <span class="editable-word">Coven</span> protection fees</label>
+                                <span class="static-text" id="ss-wages">13,000 gold coins</span>
+                                <input type="text" id="ss-wages-input" class="display-none" placeholder="0 gold coins">
                             </div>
                             
                             <div class="form-field">
-                                <label>9. <span class="editable-word">Social</span> security tax withheld</label>
-                                <span class="static-text" id="ss-tax">$2,790.00</span>
-                                <input type="text" id="ss-tax-input" class="hidden" placeholder="$0.00">
+                                <label>9. <span class="editable-word">Coven</span> protection tax withheld</label>
+                                <span class="static-text" id="ss-tax">666 gold coins</span>
+                                <input type="text" id="ss-tax-input" class="display-none" placeholder="0 gold coins">
                             </div>
                             
                             <div class="form-field">
-                                <label>10. <span class="editable-word">Medicare</span> wages and tips</label>
-                                <span class="static-text" id="medicare-wages">$45,000.00</span>
-                                <input type="text" id="medicare-wages-input" class="hidden" placeholder="$0.00">
+                                <label>10. <span class="editable-word">Potion</span> ingredient costs</label>
+                                <span class="static-text" id="medicare-wages">13,000 gold coins</span>
+                                <input type="text" id="medicare-wages-input" class="display-none" placeholder="0 gold coins">
                             </div>
                             
                             <div class="form-field">
-                                <label>11. <span class="editable-word">Medicare</span> tax withheld</label>
-                                <span class="static-text" id="medicare-tax">$652.50</span>
-                                <input type="text" id="medicare-tax-input" class="hidden" placeholder="$0.00">
+                                <label>11. <span class="editable-word">Ingredient</span> tax withheld</label>
+                                <span class="static-text" id="medicare-tax">313 gold coins</span>
+                                <input type="text" id="medicare-tax-input" class="display-none" placeholder="0 gold coins">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Additional Income Information -->
+                    <!-- Additional Magical Earnings -->
                     <div class="form-section additional-income">
-                        <h3><span class="editable-word">Additional</span> Income Information</h3>
+                        <h3>🔮 <span class="editable-word">Additional</span> Magical Earnings</h3>
                         <div class="additional-grid">
                             <div class="form-field">
-                                <label>15. <span class="editable-word">Business</span> income (Schedule C)</label>
-                                <span class="static-text" id="business-income">$8,500.00</span>
-                                <input type="text" id="business-income-input" class="hidden">
+                                <label>15. <span class="editable-word">Curse</span> removal services</label>
+                                <span class="static-text" id="business-income">2,500 gold coins</span>
+                                <input type="text" id="business-income-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>16. <span class="editable-word">Interest</span> income</label>
-                                <span class="static-text" id="interest-income">$125.50</span>
-                                <input type="text" id="interest-income-input" class="hidden">
+                                <label>16. <span class="editable-word">Crystal</span> ball consultations</label>
+                                <span class="static-text" id="interest-income">666 gold coins</span>
+                                <input type="text" id="interest-income-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>17. <span class="editable-word">Dividend</span> income</label>
-                                <span class="static-text" id="dividend-income">$340.00</span>
-                                <input type="text" id="dividend-income-input" class="hidden">
+                                <label>17. <span class="editable-word">Enchanted</span> item sales</label>
+                                <span class="static-text" id="dividend-income">1,313 gold coins</span>
+                                <input type="text" id="dividend-income-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>18. <span class="editable-word">Retirement</span> account distributions</label>
-                                <span class="static-text" id="retirement-dist">$0.00</span>
-                                <input type="text" id="retirement-dist-input" class="hidden">
+                                <label>18. <span class="editable-word">Familiar</span> boarding fees</label>
+                                <span class="static-text" id="retirement-dist">0 gold coins</span>
+                                <input type="text" id="retirement-dist-input" class="display-none">
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Deductions Section -->
+                    <!-- Magical Deductions Section -->
                     <div class="form-section deductions-info">
-                        <h3><span class="editable-word">Deductions</span> and Credits</h3>
+                        <h3>✨ <span class="editable-word">Magical</span> Deductions and Credits</h3>
                         <div class="deductions-grid">
                             <div class="form-field">
-                                <label>19. <span class="editable-word">Mortgage</span> interest paid</label>
-                                <span class="static-text" id="mortgage-interest">$12,400.00</span>
-                                <input type="text" id="mortgage-interest-input" class="hidden">
+                                <label>19. <span class="editable-word">Haunted</span> mansion upkeep costs</label>
+                                <span class="static-text" id="mortgage-interest">3,100 gold coins</span>
+                                <input type="text" id="mortgage-interest-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>20. <span class="editable-word">Charitable</span> contributions</label>
-                                <span class="static-text" id="charitable-contrib">$2,850.00</span>
-                                <input type="text" id="charitable-contrib-input" class="hidden">
+                                <label>20. <span class="editable-word">Charitable</span> spell donations</label>
+                                <span class="static-text" id="charitable-contrib">713 gold coins</span>
+                                <input type="text" id="charitable-contrib-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>21. <span class="editable-word">Medical</span> expenses</label>
-                                <span class="static-text" id="medical-expenses">$4,200.00</span>
-                                <input type="text" id="medical-expenses-input" class="hidden">
+                                <label>21. <span class="editable-word">Cauldron</span> maintenance expenses</label>
+                                <span class="static-text" id="medical-expenses">1,050 gold coins</span>
+                                <input type="text" id="medical-expenses-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>22. <span class="editable-word">Education</span> credits</label>
-                                <span class="static-text" id="education-credits">$1,500.00</span>
-                                <input type="text" id="education-credits-input" class="hidden">
+                                <label>22. <span class="editable-word">Spellcasting</span> education credits</label>
+                                <span class="static-text" id="education-credits">375 gold coins</span>
+                                <input type="text" id="education-credits-input" class="display-none">
                             </div>
                         </div>
                     </div>
@@ -216,19 +216,19 @@
                             <div class="form-field">
                                 <label>23. <span class="editable-word">Foreign</span> bank account maximum balance</label>
                                 <span class="static-text" id="foreign-balance">$0.00</span>
-                                <input type="text" id="foreign-balance-input" class="hidden">
+                                <input type="text" id="foreign-balance-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>24. <span class="editable-word">Country</span> of foreign account</label>
                                 <span class="static-text" id="foreign-country">N/A</span>
-                                <input type="text" id="foreign-country-input" class="hidden">
+                                <input type="text" id="foreign-country-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>25. <span class="editable-word">Foreign</span> tax paid</label>
                                 <span class="static-text" id="foreign-tax">$0.00</span>
-                                <input type="text" id="foreign-tax-input" class="hidden">
+                                <input type="text" id="foreign-tax-input" class="display-none">
                             </div>
                         </div>
                     </div>
@@ -239,19 +239,19 @@
                             <div class="form-field">
                                 <label>26. <span class="editable-word">AMT</span> income adjustments</label>
                                 <span class="static-text" id="amt-adjustments">$0.00</span>
-                                <input type="text" id="amt-adjustments-input" class="hidden">
+                                <input type="text" id="amt-adjustments-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>27. <span class="editable-word">Tentative</span> minimum tax</label>
                                 <span class="static-text" id="tentative-amt">$0.00</span>
-                                <input type="text" id="tentative-amt-input" class="hidden">
+                                <input type="text" id="tentative-amt-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>28. <span class="editable-word">AMT</span> foreign tax credit</label>
                                 <span class="static-text" id="amt-foreign-credit">$0.00</span>
-                                <input type="text" id="amt-foreign-credit-input" class="hidden">
+                                <input type="text" id="amt-foreign-credit-input" class="display-none">
                             </div>
                         </div>
                     </div>
@@ -262,25 +262,25 @@
                             <div class="form-field">
                                 <label>29. <span class="editable-word">Section</span> 179 deduction</label>
                                 <span class="static-text" id="section179">$0.00</span>
-                                <input type="text" id="section179-input" class="hidden">
+                                <input type="text" id="section179-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>30. <span class="editable-word">Bonus</span> depreciation claimed</label>
                                 <span class="static-text" id="bonus-depreciation">$0.00</span>
-                                <input type="text" id="bonus-depreciation-input" class="hidden">
+                                <input type="text" id="bonus-depreciation-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>31. <span class="editable-word">Like-kind</span> exchange basis</label>
                                 <span class="static-text" id="like-kind-basis">$0.00</span>
-                                <input type="text" id="like-kind-basis-input" class="hidden">
+                                <input type="text" id="like-kind-basis-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>32. <span class="editable-word">Passive</span> activity loss carryover</label>
                                 <span class="static-text" id="passive-loss">$0.00</span>
-                                <input type="text" id="passive-loss-input" class="hidden">
+                                <input type="text" id="passive-loss-input" class="display-none">
                             </div>
                         </div>
                     </div>
@@ -292,19 +292,19 @@
                             <div class="form-field">
                                 <label>33. <span class="editable-word">State</span></label>
                                 <span class="static-text" id="state">CA</span>
-                                <input type="text" id="state-input" class="hidden">
+                                <input type="text" id="state-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>34. <span class="editable-word">State</span> wages, tips, etc.</label>
                                 <span class="static-text" id="state-wages">$45,000.00</span>
-                                <input type="text" id="state-wages-input" class="hidden">
+                                <input type="text" id="state-wages-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
                                 <label>35. <span class="editable-word">State</span> income tax</label>
                                 <span class="static-text" id="state-tax">$2,250.00</span>
-                                <input type="text" id="state-tax-input" class="hidden">
+                                <input type="text" id="state-tax-input" class="display-none">
                             </div>
                         </div>
                     </div>
@@ -325,20 +325,20 @@
         <!-- Game Over Screen -->
         <div id="game-over-screen" class="screen hidden">
             <div class="game-over-content">
-                <h2 id="game-over-title">Tax Form Submitted!</h2>
-                <div id="game-over-message">Congratulations! You've successfully navigated the treacherous world of tax forms!</div>
+                <h2 id="game-over-title">🧙‍♀️ Magical Forms Complete!</h2>
+                <div id="game-over-message">Spook-tacular! You've successfully completed the witch's mystical paperwork before midnight!</div>
                 <div class="game-stats">
-                    <p>Fields Completed: <span id="final-completed">0</span> / <span id="final-total">0</span></p>
-                    <p>Completion Time: <span id="final-time">0</span>s</p>
-                    <p>Difficulty: <span id="final-difficulty">Normal</span></p>
-                    <p>Accuracy Rate: <span id="accuracy-rate">100%</span></p>
+                    <p>Spells Documented: <span id="final-completed">0</span> / <span id="final-total">0</span></p>
+                    <p>Ritual Time: <span id="final-time">0</span>s</p>
+                    <p>Magical Difficulty: <span id="final-difficulty">Normal</span></p>
+                    <p>Enchantment Accuracy: <span id="accuracy-rate">100%</span></p>
                 </div>
                 
                 <div class="game-over-buttons">
-                    <button class="game-btn" id="restart-btn">File Again</button>
-                    <button class="game-btn secondary" id="difficulty-btn">Change Difficulty</button>
+                    <button class="game-btn" id="restart-btn">Cast Again</button>
+                    <button class="game-btn secondary" id="difficulty-btn">Change Magic Level</button>
                     <button class="game-btn secondary" onclick="window.location.href='../index.html'">
-                        Back to Gallery
+                        Return to Coven
                     </button>
                 </div>
             </div>
@@ -347,5 +347,6 @@
     
     <script src="../main.js"></script>
     <script src="../scripts/taxes-game.js"></script>
+    <script src="../scripts/falling-sprites.js"></script>
 </body>
 </html>

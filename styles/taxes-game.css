@@ -5,7 +5,7 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #9b59b6 100%);
+    background: linear-gradient(135deg, #1a0d2e 0%, #2d1b47 50%, #0f0f23 100%);
 }
 
 .screen {
@@ -118,7 +118,7 @@
 
 /* Game Screen Styles */
 #game-screen {
-    background: #f5f5f5;
+    background: linear-gradient(135deg, #2a1a3e 0%, #3d2b52 100%);
     overflow-y: auto;
     padding: 20px;
     align-items: flex-start;
@@ -128,18 +128,21 @@
 .tax-form-container {
     max-width: 900px;
     margin: 0 auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #2a1f3d 0%, #3d2b52 100%);
+    border: 3px solid #ff6b35;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3), inset 0 0 50px rgba(255, 140, 66, 0.1);
     overflow: hidden;
+    color: #f8f8ff;
 }
 
 .form-header {
-    background: #2c3e50;
-    color: white;
+    background: linear-gradient(135deg, #d63031 0%, #ff6b35 100%);
+    color: #fef2f2;
     padding: 30px;
     text-align: center;
     position: relative;
+    border-bottom: 3px solid #ff8c42;
 }
 
 .form-header h2 {
@@ -175,11 +178,12 @@
 }
 
 .form-section h3 {
-    color: #2c3e50;
+    color: #ff8c42;
     font-size: 1.5em;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ff6b35;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
 }
 
 .form-row {
@@ -200,7 +204,7 @@
 .form-field label {
     display: block;
     font-weight: bold;
-    color: #555;
+    color: #e2e8f0;
     margin-bottom: 8px;
     font-size: 0.95em;
     line-height: 1.3;
@@ -209,48 +213,52 @@
 .static-text {
     display: block;
     padding: 12px 15px;
-    background: #f8f9fa;
-    border: 2px solid #e9ecef;
-    border-radius: 5px;
+    background: rgba(255, 140, 66, 0.1);
+    border: 2px solid #ff8c42;
+    border-radius: 8px;
     font-family: 'Courier New', monospace;
     font-size: 1.1em;
-    color: #333;
+    color: #f8f8ff;
     min-height: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 107, 53, 0.2);
 }
 
 .form-field input {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    border: 2px solid #ff6b35;
+    border-radius: 8px;
     font-size: 1.1em;
     font-family: 'Courier New', monospace;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background: white;
+    background: rgba(255, 140, 66, 0.05);
+    color: #f8f8ff;
 }
 
 .form-field input:focus {
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    border-color: #ff8c42;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3), 0 0 15px rgba(255, 107, 53, 0.2);
 }
 
 .form-field input.filled {
-    background: #e8f5e8;
-    border-color: #28a745;
+    background: rgba(34, 197, 94, 0.2);
+    border-color: #22c55e;
+    color: #dcfce7;
 }
 
 .form-field input:not(.filled) {
-    background: #ffeaea;
-    border-color: #dc3545;
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #fecaca;
 }
 
 .form-field input:not(.filled):focus {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3), 0 0 15px rgba(239, 68, 68, 0.2);
 }
 
-.hidden {
+.display-none {
     display: none !important;
 }
 
@@ -339,31 +347,32 @@
 
 /* Form Footer */
 .form-footer {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #2a1f3d 0%, #3d2b52 100%);
     padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid #eee;
+    border-top: 3px solid #ff6b35;
+    box-shadow: inset 0 3px 10px rgba(255, 107, 53, 0.2);
 }
 
 .submit-button {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    color: white;
-    border: none;
+    background: linear-gradient(135deg, #ff6b35, #d63031);
+    color: #fef2f2;
+    border: 2px solid #ff8c42;
     padding: 15px 40px;
     font-size: 1.3em;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4), 0 0 20px rgba(255, 107, 53, 0.2);
 }
 
 .submit-button:hover {
-    background: linear-gradient(135deg, #218838, #1ea080);
+    background: linear-gradient(135deg, #ff8c42, #ff6b35);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5), 0 0 30px rgba(255, 107, 53, 0.3);
 }
 
 .submit-button:disabled {
@@ -375,8 +384,9 @@
 
 .progress-display {
     font-size: 1.2em;
-    color: #555;
+    color: #e2e8f0;
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
 }
 
 .back-to-difficulty {
@@ -439,15 +449,16 @@
 }
 
 .game-btn {
-    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    background: linear-gradient(135deg, #ff6b35, #d63031);
     color: white;
-    border: none;
+    border: 2px solid #ff8c42;
     padding: 15px 30px;
     font-size: 1.2em;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .game-btn.secondary {
