@@ -58,6 +58,12 @@ class TaxesGame {
         this.difficulty = difficulty;
         this.gameStartTime = Date.now();
         this.setupGameForDifficulty();
+        
+        // Stop falling sprites during gameplay
+        if (window.fallingSprites) {
+            window.fallingSprites.stop();
+        }
+        
         this.showScreen('game-screen');
         this.updateProgress();
     }
@@ -298,6 +304,11 @@ class TaxesGame {
         let message = this.getCompletionMessage(gameTime);
         document.getElementById('game-over-message').textContent = message;
         
+        // Resume falling sprites
+        if (window.fallingSprites) {
+            window.fallingSprites.start();
+        }
+        
         this.showScreen('game-over-screen');
         
         // Unlock crazy mode if not already unlocked
@@ -359,6 +370,11 @@ class TaxesGame {
     }
     
     backToDifficulty() {
+        // Resume falling sprites
+        if (window.fallingSprites) {
+            window.fallingSprites.start();
+        }
+        
         this.showScreen('difficulty-screen');
         this.difficulty = null;
     }
@@ -399,6 +415,81 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('taxes-diff-hard-desc').textContent = diffDescs.hard;
     document.getElementById('taxes-diff-crazy-name').textContent = diffNames.crazy;
     document.getElementById('taxes-diff-crazy-desc').textContent = diffDescs.crazy;
+    
+    // Populate form section headings
+    const headings = holidayResources.getTaxesFormSectionHeadings();
+    document.getElementById('section-heading-employee').textContent = headings.employee;
+    document.getElementById('section-heading-employer').textContent = headings.employer;
+    document.getElementById('section-heading-earnings').textContent = headings.earnings;
+    document.getElementById('section-heading-additional').innerHTML = headings.additional;
+    document.getElementById('section-heading-deductions').innerHTML = headings.deductions;
+    document.getElementById('section-heading-foreign').innerHTML = headings.foreign;
+    document.getElementById('section-heading-amt').innerHTML = headings.amt;
+    document.getElementById('section-heading-depreciation').innerHTML = headings.depreciation;
+    document.getElementById('section-heading-state').innerHTML = headings.state;
+    
+    // Populate form default values
+    const defaultValues = holidayResources.getTaxesFormDefaultValues();
+    document.getElementById('employee-name').textContent = defaultValues.employeeName;
+    document.getElementById('employee-address').innerHTML = defaultValues.employeeAddress + '<br>' + defaultValues.employeeCity;
+    document.getElementById('employer-name').textContent = defaultValues.employerName;
+    document.getElementById('employer-address').innerHTML = defaultValues.employerAddress + '<br>' + defaultValues.employerCity;
+    
+    // Populate form field labels with editable words
+    const words = holidayResources.getTaxesFormEditableWords();
+    document.getElementById('label-1').textContent = words.person + ' magical name';
+    document.getElementById('label-2').textContent = words.place + ' address';
+    document.getElementById('label-3').textContent = words.place;
+    document.getElementById('label-4').textContent = words.activity1;
+    document.getElementById('label-5').textContent = words.adjective;
+    document.getElementById('label-6').textContent = words.place;
+    document.getElementById('label-7').textContent = words.activity2;
+    document.getElementById('label-8').textContent = words.tool;
+    document.getElementById('label-9').textContent = words.item4;
+    document.getElementById('label-10').textContent = 'Broomstick';
+    document.getElementById('label-11').textContent = words.activity1;
+    document.getElementById('label-12').textContent = 'Vision';
+    document.getElementById('label-13').textContent = words.adjective;
+    document.getElementById('label-14').textContent = words.item1;
+    document.getElementById('label-15').textContent = words.item1;
+    document.getElementById('label-16').textContent = words.item2;
+    document.getElementById('label-17').textContent = words.item3;
+    document.getElementById('label-18').textContent = words.item4;
+    document.getElementById('label-19').textContent = words.location;
+    document.getElementById('label-20').textContent = words.donation;
+    document.getElementById('label-21').textContent = words.tool;
+    document.getElementById('label-22').textContent = words.skill;
+    document.getElementById('label-23').textContent = 'Foreign';
+    document.getElementById('label-24').textContent = 'Country';
+    document.getElementById('label-25').textContent = 'Foreign';
+    document.getElementById('label-26').textContent = 'AMT';
+    document.getElementById('label-27').textContent = 'Tentative';
+    document.getElementById('label-28').textContent = 'AMT';
+    document.getElementById('label-29').textContent = 'Section';
+    document.getElementById('label-30').textContent = 'Bonus';
+    document.getElementById('label-31').textContent = 'Like-kind';
+    document.getElementById('label-32').textContent = 'Passive';
+    document.getElementById('label-33').textContent = 'State';
+    document.getElementById('label-34').textContent = 'State';
+    document.getElementById('label-35').textContent = 'State';
+    
+    // Replace currency in all static text elements
+    const currency = holidayResources.getTaxesFormCurrency();
+    document.querySelectorAll('.static-text').forEach(el => {
+        if (el.textContent.includes('gold coins')) {
+            el.textContent = el.textContent.replace(/gold coins/g, currency);
+        }
+    });
+    
+    // Populate game-over screen labels
+    const gameOverLabels = holidayResources.getTaxesGameOverLabels();
+    document.getElementById('gameover-label-completed').textContent = gameOverLabels.completed;
+    document.getElementById('gameover-label-time').textContent = gameOverLabels.time;
+    document.getElementById('gameover-label-difficulty').textContent = gameOverLabels.difficulty;
+    document.getElementById('gameover-label-accuracy').textContent = gameOverLabels.accuracy;
+    document.getElementById('gameover-btn-restart').textContent = gameOverLabels.restart;
+    document.getElementById('gameover-btn-difficulty').textContent = gameOverLabels.changeDifficulty;
+    document.getElementById('gameover-btn-home').textContent = gameOverLabels.returnHome;
     
     window.taxesGame = new TaxesGame();
     

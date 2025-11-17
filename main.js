@@ -26,7 +26,7 @@ function showRewardModal(gameName, score, difficulty) {
             ${score > 0 ? `<p>${holidayResources.getScoreLabel()}: <strong>${score}</strong></p>` : ''}
             <p>${holidayResources.getDifficultyLabel()}: <strong>${difficulty}</strong></p>
             <button class="reward-btn" onclick="closeRewardModal()">${holidayResources.getContinueButtonText()}</button>
-            <button class="reward-btn secondary" onclick="window.location.href='index.html'">${holidayResources.getReturnButtonText()}</button>
+            <button class="reward-btn secondary" onclick="window.location.href='../index.html'">${holidayResources.getReturnButtonText()}</button>
         </div>
     `;
     

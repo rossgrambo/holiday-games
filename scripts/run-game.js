@@ -216,6 +216,11 @@ class RunGame {
         this.difficulty = difficulty;
         this.gameState = 'playing';
         
+        // Stop falling sprites during gameplay
+        if (window.fallingSprites) {
+            window.fallingSprites.stop();
+        }
+        
         // Reset game state
         this.distance = 0;
         this.gameTime = 0;
@@ -555,6 +560,11 @@ class RunGame {
         this.gameState = 'gameOver';
         cancelAnimationFrame(this.gameLoop);
         
+        // Resume falling sprites
+        if (window.fallingSprites) {
+            window.fallingSprites.start();
+        }
+        
         const settings = this.difficulties[this.difficulty];
         document.getElementById('game-over-title').textContent = 'Victory!';
         document.getElementById('game-over-message').textContent = holidayResources.getRunVictoryMessage();
@@ -573,6 +583,11 @@ class RunGame {
     loseGame(message) {
         this.gameState = 'gameOver';
         cancelAnimationFrame(this.gameLoop);
+        
+        // Resume falling sprites
+        if (window.fallingSprites) {
+            window.fallingSprites.start();
+        }
         
         const settings = this.difficulties[this.difficulty];
         document.getElementById('game-over-title').textContent = 'Game Over!';

@@ -879,6 +879,565 @@ class HolidayResources {
         root.style.setProperty('--holiday-gradient2', theme.gradient2);
         root.style.setProperty('--holiday-gradient3', theme.gradient3);
     }
+    
+    // Taxes Game Form Content
+    getTaxesFormSectionHeadings() {
+        const headings = {
+            halloween: {
+                employee: '🧙‍♀️ Witch Information',
+                employer: '🏚️ Magical Organization Information',
+                earnings: '💰 Magical Earnings Information',
+                additional: '🔮 Additional Magical Earnings',
+                deductions: '✨ Magical Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            thanksgiving: {
+                employee: '🦃 Pilgrim Information',
+                employer: '🏠 Harvest Organization Information',
+                earnings: '🌾 Harvest Earnings Information',
+                additional: '🥧 Additional Harvest Earnings',
+                deductions: '🍁 Harvest Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            christmas: {
+                employee: '🎅 Elf Information',
+                employer: '🏭 Workshop Organization Information',
+                earnings: '🎁 Gift-Making Earnings Information',
+                additional: '⛄ Additional Workshop Earnings',
+                deductions: '🎄 Holiday Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            newyear: {
+                employee: '🎊 Celebrator Information',
+                employer: '🎉 Party Organization Information',
+                earnings: '🥂 Celebration Earnings Information',
+                additional: '🎆 Additional Party Earnings',
+                deductions: '✨ Celebration Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            valentines: {
+                employee: '💝 Cupid Information',
+                employer: '💕 Love Organization Information',
+                earnings: '💖 Romance Earnings Information',
+                additional: '💐 Additional Love Earnings',
+                deductions: '💘 Romantic Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            stpatricks: {
+                employee: '🍀 Leprechaun Information',
+                employer: '🌈 Lucky Organization Information',
+                earnings: '🪙 Golden Earnings Information',
+                additional: '☘️ Additional Lucky Earnings',
+                deductions: '💚 Irish Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            easter: {
+                employee: '🐰 Bunny Information',
+                employer: '🥚 Egg Hunt Organization Information',
+                earnings: '🌷 Spring Earnings Information',
+                additional: '🐣 Additional Easter Earnings',
+                deductions: '🌸 Spring Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            spring: {
+                employee: '🌸 Gardener Information',
+                employer: '🌼 Garden Organization Information',
+                earnings: '🌺 Floral Earnings Information',
+                additional: '🦋 Additional Garden Earnings',
+                deductions: '🌻 Nature Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            summer: {
+                employee: '☀️ Beachgoer Information',
+                employer: '🏖️ Summer Organization Information',
+                earnings: '🌊 Vacation Earnings Information',
+                additional: '🍉 Additional Summer Earnings',
+                deductions: '🏄 Beach Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            independence: {
+                employee: '🇺🇸 Patriot Information',
+                employer: '🎆 Freedom Organization Information',
+                earnings: '⭐ Liberty Earnings Information',
+                additional: '🎇 Additional Patriotic Earnings',
+                deductions: '🦅 American Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            },
+            fall: {
+                employee: '🍂 Harvester Information',
+                employer: '🎃 Autumn Organization Information',
+                earnings: '🌰 Seasonal Earnings Information',
+                additional: '🍁 Additional Autumn Earnings',
+                deductions: '🌾 Harvest Deductions and Credits',
+                foreign: 'Foreign Account Information (FBAR)',
+                amt: 'Alternative Minimum Tax (AMT)',
+                depreciation: 'Depreciation and Asset Information',
+                state: 'State Information'
+            }
+        };
+        return headings[this.currentHoliday];
+    }
+    
+    getTaxesFormEditableWords() {
+        const words = {
+            halloween: {
+                person: 'Witch\'s',
+                personNoApostrophe: 'Witch',
+                place: 'Coven\'s',
+                placeNoApostrophe: 'Coven',
+                adjective: 'Magical',
+                license: 'Witch\'s license',
+                organization: 'Magical organization',
+                activity1: 'Spell',
+                activity2: 'Potion',
+                item1: 'Curse',
+                item2: 'Crystal',
+                item3: 'Enchanted',
+                item4: 'Familiar',
+                location: 'Haunted',
+                donation: 'Charitable spell',
+                tool: 'Cauldron',
+                skill: 'Spellcasting'
+            },
+            thanksgiving: {
+                person: 'Pilgrim\'s',
+                personNoApostrophe: 'Pilgrim',
+                place: 'Family\'s',
+                placeNoApostrophe: 'Family',
+                adjective: 'Harvest',
+                license: 'Pilgrim\'s license',
+                organization: 'Harvest organization',
+                activity1: 'Farming',
+                activity2: 'Cooking',
+                item1: 'Blessing',
+                item2: 'Gratitude',
+                item3: 'Feast',
+                item4: 'Turkey',
+                location: 'Cozy',
+                donation: 'Charitable food',
+                tool: 'Kitchen',
+                skill: 'Farming'
+            },
+            christmas: {
+                person: 'Elf\'s',
+                personNoApostrophe: 'Elf',
+                place: 'Workshop\'s',
+                placeNoApostrophe: 'Workshop',
+                adjective: 'Festive',
+                license: 'Elf\'s license',
+                organization: 'Festive organization',
+                activity1: 'Gift',
+                activity2: 'Toy',
+                item1: 'Present',
+                item2: 'Ornament',
+                item3: 'Wrapped',
+                item4: 'Reindeer',
+                location: 'Jolly',
+                donation: 'Charitable gift',
+                tool: 'Sleigh',
+                skill: 'Toy-making'
+            },
+            newyear: {
+                person: 'Celebrator\'s',
+                personNoApostrophe: 'Celebrator',
+                place: 'Party\'s',
+                placeNoApostrophe: 'Party',
+                adjective: 'Festive',
+                license: 'Celebrator\'s license',
+                organization: 'Festive organization',
+                activity1: 'Resolution',
+                activity2: 'Toast',
+                item1: 'Countdown',
+                item2: 'Champagne',
+                item3: 'Sparkly',
+                item4: 'Confetti',
+                location: 'Exciting',
+                donation: 'Charitable celebration',
+                tool: 'Party horn',
+                skill: 'Celebrating'
+            },
+            valentines: {
+                person: 'Cupid\'s',
+                personNoApostrophe: 'Cupid',
+                place: 'Heart\'s',
+                placeNoApostrophe: 'Heart',
+                adjective: 'Romantic',
+                license: 'Cupid\'s license',
+                organization: 'Romantic organization',
+                activity1: 'Love',
+                activity2: 'Romance',
+                item1: 'Kiss',
+                item2: 'Rose',
+                item3: 'Lovely',
+                item4: 'Chocolate',
+                location: 'Lovely',
+                donation: 'Charitable love',
+                tool: 'Arrow',
+                skill: 'Matchmaking'
+            },
+            stpatricks: {
+                person: 'Leprechaun\'s',
+                personNoApostrophe: 'Leprechaun',
+                place: 'Rainbow\'s',
+                placeNoApostrophe: 'Rainbow',
+                adjective: 'Lucky',
+                license: 'Leprechaun\'s license',
+                organization: 'Lucky organization',
+                activity1: 'Gold',
+                activity2: 'Luck',
+                item1: 'Blessing',
+                item2: 'Shamrock',
+                item3: 'Lucky',
+                item4: 'Clover',
+                location: 'Lucky',
+                donation: 'Charitable gold',
+                tool: 'Pot',
+                skill: 'Gold-finding'
+            },
+            easter: {
+                person: 'Bunny\'s',
+                personNoApostrophe: 'Bunny',
+                place: 'Garden\'s',
+                placeNoApostrophe: 'Garden',
+                adjective: 'Spring',
+                license: 'Bunny\'s license',
+                organization: 'Spring organization',
+                activity1: 'Egg',
+                activity2: 'Basket',
+                item1: 'Hunt',
+                item2: 'Jellybean',
+                item3: 'Colorful',
+                item4: 'Chick',
+                location: 'Blooming',
+                donation: 'Charitable basket',
+                tool: 'Basket',
+                skill: 'Egg-hiding'
+            },
+            spring: {
+                person: 'Gardener\'s',
+                personNoApostrophe: 'Gardener',
+                place: 'Garden\'s',
+                placeNoApostrophe: 'Garden',
+                adjective: 'Floral',
+                license: 'Gardener\'s license',
+                organization: 'Floral organization',
+                activity1: 'Planting',
+                activity2: 'Watering',
+                item1: 'Seed',
+                item2: 'Flower',
+                item3: 'Blooming',
+                item4: 'Butterfly',
+                location: 'Beautiful',
+                donation: 'Charitable planting',
+                tool: 'Watering can',
+                skill: 'Gardening'
+            },
+            summer: {
+                person: 'Vacationer\'s',
+                personNoApostrophe: 'Vacationer',
+                place: 'Beach\'s',
+                placeNoApostrophe: 'Beach',
+                adjective: 'Sunny',
+                license: 'Vacationer\'s license',
+                organization: 'Sunny organization',
+                activity1: 'Swimming',
+                activity2: 'Surfing',
+                item1: 'Wave',
+                item2: 'Sunscreen',
+                item3: 'Beachy',
+                item4: 'Seashell',
+                location: 'Sandy',
+                donation: 'Charitable beach',
+                tool: 'Surfboard',
+                skill: 'Swimming'
+            },
+            independence: {
+                person: 'Patriot\'s',
+                personNoApostrophe: 'Patriot',
+                place: 'Nation\'s',
+                placeNoApostrophe: 'Nation',
+                adjective: 'Patriotic',
+                license: 'Patriot\'s license',
+                organization: 'Patriotic organization',
+                activity1: 'Freedom',
+                activity2: 'Liberty',
+                item1: 'Firework',
+                item2: 'Flag',
+                item3: 'Star-spangled',
+                item4: 'Eagle',
+                location: 'Proud',
+                donation: 'Charitable patriotic',
+                tool: 'Flag',
+                skill: 'Freedom-celebrating'
+            },
+            fall: {
+                person: 'Harvester\'s',
+                personNoApostrophe: 'Harvester',
+                place: 'Farm\'s',
+                placeNoApostrophe: 'Farm',
+                adjective: 'Autumn',
+                license: 'Harvester\'s license',
+                organization: 'Autumn organization',
+                activity1: 'Harvest',
+                activity2: 'Cider',
+                item1: 'Crop',
+                item2: 'Apple',
+                item3: 'Golden',
+                item4: 'Squash',
+                location: 'Rustic',
+                donation: 'Charitable harvest',
+                tool: 'Basket',
+                skill: 'Harvesting'
+            }
+        };
+        return words[this.currentHoliday];
+    }
+    
+    getTaxesFormDefaultValues() {
+        const values = {
+            halloween: {
+                employeeName: 'Morticia Spellweaver',
+                employeeAddress: '13 Haunted Hollow Lane',
+                employeeCity: 'Spooktown, MA 13131',
+                employerName: 'The Midnight Spell Society',
+                employerAddress: '666 Witches Circle',
+                employerCity: 'Salem, MA 01970'
+            },
+            thanksgiving: {
+                employeeName: 'William Harvest',
+                employeeAddress: '1621 Pilgrim Path',
+                employeeCity: 'Plymouth, MA 02360',
+                employerName: 'The Grateful Gathering Co.',
+                employerAddress: '400 Mayflower Lane',
+                employerCity: 'Plymouth, MA 02360'
+            },
+            christmas: {
+                employeeName: 'Jingle McWorkshop',
+                employeeAddress: '1 North Pole Way',
+                employeeCity: 'North Pole, AK 99705',
+                employerName: 'Santa\'s Workshop Inc.',
+                employerAddress: '2 Candy Cane Lane',
+                employerCity: 'North Pole, AK 99705'
+            },
+            newyear: {
+                employeeName: 'Nova Celebration',
+                employeeAddress: '2024 Times Square',
+                employeeCity: 'New York, NY 10036',
+                employerName: 'Midnight Party Planners',
+                employerAddress: '1 Ball Drop Plaza',
+                employerCity: 'New York, NY 10036'
+            },
+            valentines: {
+                employeeName: 'Cupid Heartstring',
+                employeeAddress: '14 Romance Road',
+                employeeCity: 'Loveland, CO 80537',
+                employerName: 'Arrow of Love Services',
+                employerAddress: '143 Valentine Avenue',
+                employerCity: 'Loveland, CO 80537'
+            },
+            stpatricks: {
+                employeeName: 'Patrick O\'Lucky',
+                employeeAddress: '17 Rainbow Road',
+                employeeCity: 'Dublin, Ireland',
+                employerName: 'Pot O\' Gold Industries',
+                employerAddress: '4 Clover Court',
+                employerCity: 'Dublin, Ireland'
+            },
+            easter: {
+                employeeName: 'Bunny Hopsworth',
+                employeeAddress: '1 Easter Lane',
+                employeeCity: 'Spring Valley, NY 10977',
+                employerName: 'The Great Egg Hunt Co.',
+                employerAddress: '12 Basket Boulevard',
+                employerCity: 'Spring Valley, NY 10977'
+            },
+            spring: {
+                employeeName: 'Flora Bloomington',
+                employeeAddress: '21 Blossom Street',
+                employeeCity: 'Garden Grove, CA 92840',
+                employerName: 'Petal Perfect Gardens',
+                employerAddress: '100 Flower Field Drive',
+                employerCity: 'Garden Grove, CA 92840'
+            },
+            summer: {
+                employeeName: 'Sunny Beachside',
+                employeeAddress: '777 Ocean Drive',
+                employeeCity: 'Miami Beach, FL 33139',
+                employerName: 'Surf & Sun Resort',
+                employerAddress: '88 Paradise Avenue',
+                employerCity: 'Miami Beach, FL 33139'
+            },
+            independence: {
+                employeeName: 'Liberty Patriot',
+                employeeAddress: '1776 Freedom Way',
+                employeeCity: 'Philadelphia, PA 19106',
+                employerName: 'Stars & Stripes Foundation',
+                employerAddress: '13 Colony Court',
+                employerCity: 'Philadelphia, PA 19106'
+            },
+            fall: {
+                employeeName: 'Autumn Goldleaf',
+                employeeAddress: '9 Harvest Hill',
+                employeeCity: 'Maple Grove, MN 55311',
+                employerName: 'Golden Acres Farm',
+                employerAddress: '55 Pumpkin Patch Lane',
+                employerCity: 'Maple Grove, MN 55311'
+            }
+        };
+        return values[this.currentHoliday];
+    }
+    
+    getTaxesFormCurrency() {
+        const currencies = {
+            halloween: 'gold coins',
+            thanksgiving: 'corn kernels',
+            christmas: 'candy canes',
+            newyear: 'party tokens',
+            valentines: 'love notes',
+            stpatricks: 'gold coins',
+            easter: 'chocolate eggs',
+            spring: 'flower petals',
+            summer: 'seashells',
+            independence: 'freedom bucks',
+            fall: 'acorns'
+        };
+        return currencies[this.currentHoliday];
+    }
+    
+    getTaxesGameOverLabels() {
+        const labels = {
+            halloween: {
+                completed: 'Spells Documented',
+                time: 'Ritual Time',
+                difficulty: 'Magical Difficulty',
+                accuracy: 'Enchantment Accuracy',
+                restart: 'Cast Again',
+                changeDifficulty: 'Change Magic Level',
+                returnHome: 'Return to Coven'
+            },
+            thanksgiving: {
+                completed: 'Blessings Counted',
+                time: 'Feast Time',
+                difficulty: 'Harvest Difficulty',
+                accuracy: 'Gratitude Accuracy',
+                restart: 'Feast Again',
+                changeDifficulty: 'Change Feast Size',
+                returnHome: 'Return to Gathering'
+            },
+            christmas: {
+                completed: 'Gifts Wrapped',
+                time: 'Workshop Time',
+                difficulty: 'Elf Difficulty',
+                accuracy: 'Wrapping Accuracy',
+                restart: 'Wrap Again',
+                changeDifficulty: 'Change Workshop Speed',
+                returnHome: 'Return to North Pole'
+            },
+            newyear: {
+                completed: 'Resolutions Made',
+                time: 'Party Time',
+                difficulty: 'Celebration Difficulty',
+                accuracy: 'Resolution Accuracy',
+                restart: 'Celebrate Again',
+                changeDifficulty: 'Change Party Size',
+                returnHome: 'Return to Celebration'
+            },
+            valentines: {
+                completed: 'Hearts Connected',
+                time: 'Love Time',
+                difficulty: 'Romance Difficulty',
+                accuracy: 'Cupid Accuracy',
+                restart: 'Spread Love Again',
+                changeDifficulty: 'Change Love Level',
+                returnHome: 'Return to Heart Haven'
+            },
+            stpatricks: {
+                completed: 'Coins Collected',
+                time: 'Lucky Time',
+                difficulty: 'Leprechaun Difficulty',
+                accuracy: 'Gold Finding Accuracy',
+                restart: 'Search Again',
+                changeDifficulty: 'Change Luck Level',
+                returnHome: 'Return to Rainbow'
+            },
+            easter: {
+                completed: 'Eggs Hidden',
+                time: 'Hunt Time',
+                difficulty: 'Bunny Difficulty',
+                accuracy: 'Hiding Accuracy',
+                restart: 'Hide Again',
+                changeDifficulty: 'Change Hunt Size',
+                returnHome: 'Return to Garden'
+            },
+            spring: {
+                completed: 'Flowers Planted',
+                time: 'Garden Time',
+                difficulty: 'Gardening Difficulty',
+                accuracy: 'Planting Accuracy',
+                restart: 'Plant Again',
+                changeDifficulty: 'Change Garden Size',
+                returnHome: 'Return to Garden'
+            },
+            summer: {
+                completed: 'Waves Surfed',
+                time: 'Beach Time',
+                difficulty: 'Vacation Difficulty',
+                accuracy: 'Surfing Accuracy',
+                restart: 'Surf Again',
+                changeDifficulty: 'Change Wave Size',
+                returnHome: 'Return to Beach'
+            },
+            independence: {
+                completed: 'Fireworks Launched',
+                time: 'Freedom Time',
+                difficulty: 'Patriotic Difficulty',
+                accuracy: 'Launch Accuracy',
+                restart: 'Launch Again',
+                changeDifficulty: 'Change Display Size',
+                returnHome: 'Return to Liberty'
+            },
+            fall: {
+                completed: 'Crops Harvested',
+                time: 'Harvest Time',
+                difficulty: 'Farm Difficulty',
+                accuracy: 'Harvesting Accuracy',
+                restart: 'Harvest Again',
+                changeDifficulty: 'Change Farm Size',
+                returnHome: 'Return to Farm'
+            }
+        };
+        return labels[this.currentHoliday];
+    }
 }
 
 // Create a global instance

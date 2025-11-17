@@ -231,29 +231,29 @@ class FallingSprites {
 }
 
 // Initialize the falling sprites when the page loads
-let fallingSprites = null;
+window.fallingSprites = null;
 
 document.addEventListener('DOMContentLoaded', function() {
     // Wait a bit to ensure the page is fully loaded
     setTimeout(() => {
-        fallingSprites = new FallingSprites();
+        window.fallingSprites = new FallingSprites();
     }, 500);
 });
 
 // Cleanup when page is unloaded
 window.addEventListener('beforeunload', function() {
-    if (fallingSprites) {
-        fallingSprites.stop();
+    if (window.fallingSprites) {
+        window.fallingSprites.stop();
     }
 });
 
 // Pause/resume based on page visibility
 document.addEventListener('visibilitychange', function() {
-    if (fallingSprites) {
+    if (window.fallingSprites) {
         if (document.hidden) {
-            fallingSprites.stop();
+            window.fallingSprites.stop();
         } else {
-            fallingSprites.start();
+            window.fallingSprites.start();
         }
     }
 });

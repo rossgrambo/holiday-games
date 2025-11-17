@@ -58,10 +58,10 @@
                 <div class="form-content">
                     <!-- Witch Information Section -->
                     <div class="form-section employee-info">
-                        <h3>🧙‍♀️ Witch Information</h3>
+                        <h3><span id="section-heading-employee">🧙‍♀️ Witch Information</span></h3>
                         <div class="form-row">
                             <div class="form-field">
-                                <label>1. Witch's magical name</label>
+                                <label>1. <span id="label-1">Witch's magical name</span></label>
                                 <span class="static-text" id="employee-name">Morticia Spellweaver</span>
                                 <input type="text" id="employee-name-input" class="display-none" placeholder="Enter your magical name">
                             </div>
@@ -69,9 +69,9 @@
                         
                         <div class="form-row">
                             <div class="form-field">
-                                <label>2. Coven's address</label>
+                                <label>2. <span id="label-2">Coven's address</span></label>
                                 <div class="address-block">
-                                    <span class="static-text" id="employee-address">13 Haunted Hollow Lane<br>Salem, MA 01970</span>
+                                    <span class="static-text" id="employee-address">13 Haunted Hollow Lane<br>Spooktown, MA 13131</span>
                                     <input type="text" id="employee-address-input" class="display-none" placeholder="Enter your coven's address">
                                 </div>
                             </div>
@@ -80,10 +80,10 @@
                     
                     <!-- Magical Organization Section -->
                     <div class="form-section employer-info">
-                        <h3>🏚️ Magical Organization Information</h3>
+                        <h3><span id="section-heading-employer">🏚️ Magical Organization Information</span></h3>
                         <div class="form-row">
                             <div class="form-field">
-                                <label>3. <span class="editable-word">Coven's</span> name and address</label>
+                                <label>3. <span id="label-3" class="editable-word">Coven's</span> name and address</label>
                                 <div class="address-block">
                                     <span class="static-text" id="employer-name">The Midnight Spell Society</span>
                                     <input type="text" id="employer-name-input" class="display-none" placeholder="Coven name">
@@ -107,72 +107,102 @@
                         </div>
                     </div>
                     
-                    <!-- Magical Earnings Information -->
-                    <div class="form-section wages-info">
-                        <h3>💰 <span class="editable-word">Magical</span> Earnings Information</h3>
-                        <div class="wages-grid">
+                    <!-- Magical Earnings Section -->
+                    <div class="form-section earnings-info">
+                        <h3><span id="section-heading-earnings">💰 Magical Earnings Information</span></h3>
+                        <div class="earnings-grid">
                             <div class="form-field">
-                                <label>6. <span class="editable-word">Spell</span> casting fees, potions, other compensation</label>
+                                <label>4. <span id="label-4" class="editable-word">Spell</span> casting fees</label>
                                 <span class="static-text" id="wages">13,000 gold coins</span>
-                                <input type="text" id="wages-input" class="display-none" placeholder="0 gold coins">
+                                <input type="text" id="wages-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>7. <span class="editable-word">Magical</span> licensing fees withheld</label>
-                                <span class="static-text" id="federal-tax">1,337 gold coins</span>
-                                <input type="text" id="federal-tax-input" class="display-none" placeholder="0 gold coins">
+                                <label>5. <span id="label-5" class="editable-word">Magical</span> licensing fees</label>
+                                <span class="static-text" id="federal-tax">2,080 gold coins</span>
+                                <input type="text" id="federal-tax-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>8. <span class="editable-word">Coven</span> protection fees</label>
-                                <span class="static-text" id="ss-wages">13,000 gold coins</span>
-                                <input type="text" id="ss-wages-input" class="display-none" placeholder="0 gold coins">
+                                <label>6. <span id="label-6" class="editable-word">Coven</span> protection fees</label>
+                                <span class="static-text" id="state-tax">1,040 gold coins</span>
+                                <input type="text" id="state-tax-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>9. <span class="editable-word">Coven</span> protection tax withheld</label>
-                                <span class="static-text" id="ss-tax">666 gold coins</span>
-                                <input type="text" id="ss-tax-input" class="display-none" placeholder="0 gold coins">
+                                <label>7. <span id="label-7" class="editable-word">Potion</span> ingredient costs</label>
+                                <span class="static-text" id="social-security">3,100 gold coins</span>
+                                <input type="text" id="social-security-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>10. <span class="editable-word">Potion</span> ingredient costs</label>
-                                <span class="static-text" id="medicare-wages">13,000 gold coins</span>
-                                <input type="text" id="medicare-wages-input" class="display-none" placeholder="0 gold coins">
+                                <label>8. <span id="label-8" class="editable-word">Cauldron</span> rental expenses</label>
+                                <span class="static-text" id="medicare">725 gold coins</span>
+                                <input type="text" id="medicare-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>11. <span class="editable-word">Ingredient</span> tax withheld</label>
-                                <span class="static-text" id="medicare-tax">313 gold coins</span>
-                                <input type="text" id="medicare-tax-input" class="display-none" placeholder="0 gold coins">
+                                <label>9. <span id="label-9" class="editable-word">Familiar</span> care expenses</label>
+                                <span class="static-text" id="health-insurance">1,200 gold coins</span>
+                                <input type="text" id="health-insurance-input" class="display-none">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label>10. <span id="label-10" class="editable-word">Broomstick</span> maintenance</label>
+                                <span class="static-text" id="retirement-401k">2,600 gold coins</span>
+                                <input type="text" id="retirement-401k-input" class="display-none">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label>11. <span id="label-11" class="editable-word">Spell</span> insurance premiums</label>
+                                <span class="static-text" id="dental-insurance">520 gold coins</span>
+                                <input type="text" id="dental-insurance-input" class="display-none">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label>12. <span id="label-12" class="editable-word">Vision</span> crystal maintenance</label>
+                                <span class="static-text" id="vision-insurance">260 gold coins</span>
+                                <input type="text" id="vision-insurance-input" class="display-none">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label>13. <span id="label-13" class="editable-word">Magical</span> guild dues</label>
+                                <span class="static-text" id="union-dues">150 gold coins</span>
+                                <input type="text" id="union-dues-input" class="display-none">
+                            </div>
+                            
+                            <div class="form-field">
+                                <label>14. <span id="label-14" class="editable-word">Curse</span> protection plan</label>
+                                <span class="static-text" id="life-insurance">375 gold coins</span>
+                                <input type="text" id="life-insurance-input" class="display-none">
                             </div>
                         </div>
                     </div>
                     
                     <!-- Additional Magical Earnings -->
                     <div class="form-section additional-income">
-                        <h3>🔮 <span class="editable-word">Additional</span> Magical Earnings</h3>
+                        <h3><span id="section-heading-additional">🔮 <span id="word-additional" class="editable-word">Additional</span> Magical Earnings</span></h3>
                         <div class="additional-grid">
                             <div class="form-field">
-                                <label>15. <span class="editable-word">Curse</span> removal services</label>
+                                <label>15. <span id="label-15" class="editable-word">Curse</span> removal services</label>
                                 <span class="static-text" id="business-income">2,500 gold coins</span>
                                 <input type="text" id="business-income-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>16. <span class="editable-word">Crystal</span> ball consultations</label>
+                                <label>16. <span id="label-16" class="editable-word">Crystal</span> ball consultations</label>
                                 <span class="static-text" id="interest-income">666 gold coins</span>
                                 <input type="text" id="interest-income-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>17. <span class="editable-word">Enchanted</span> item sales</label>
+                                <label>17. <span id="label-17" class="editable-word">Enchanted</span> item sales</label>
                                 <span class="static-text" id="dividend-income">1,313 gold coins</span>
                                 <input type="text" id="dividend-income-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>18. <span class="editable-word">Familiar</span> boarding fees</label>
+                                <label>18. <span id="label-18" class="editable-word">Familiar</span> boarding fees</label>
                                 <span class="static-text" id="retirement-dist">0 gold coins</span>
                                 <input type="text" id="retirement-dist-input" class="display-none">
                             </div>
@@ -181,28 +211,28 @@
                     
                     <!-- Magical Deductions Section -->
                     <div class="form-section deductions-info">
-                        <h3>✨ <span class="editable-word">Magical</span> Deductions and Credits</h3>
+                        <h3><span id="section-heading-deductions">✨ <span id="word-deductions" class="editable-word">Magical</span> Deductions and Credits</span></h3>
                         <div class="deductions-grid">
                             <div class="form-field">
-                                <label>19. <span class="editable-word">Haunted</span> mansion upkeep costs</label>
+                                <label>19. <span id="label-19" class="editable-word">Haunted</span> mansion upkeep costs</label>
                                 <span class="static-text" id="mortgage-interest">3,100 gold coins</span>
                                 <input type="text" id="mortgage-interest-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>20. <span class="editable-word">Charitable</span> spell donations</label>
+                                <label>20. <span id="label-20" class="editable-word">Charitable</span> spell donations</label>
                                 <span class="static-text" id="charitable-contrib">713 gold coins</span>
                                 <input type="text" id="charitable-contrib-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>21. <span class="editable-word">Cauldron</span> maintenance expenses</label>
+                                <label>21. <span id="label-21" class="editable-word">Cauldron</span> maintenance expenses</label>
                                 <span class="static-text" id="medical-expenses">1,050 gold coins</span>
                                 <input type="text" id="medical-expenses-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>22. <span class="editable-word">Spellcasting</span> education credits</label>
+                                <label>22. <span id="label-22" class="editable-word">Spellcasting</span> education credits</label>
                                 <span class="static-text" id="education-credits">375 gold coins</span>
                                 <input type="text" id="education-credits-input" class="display-none">
                             </div>
@@ -211,22 +241,22 @@
                     
                     <!-- Crazy Mode Only Sections -->
                     <div class="form-section crazy-only foreign-info">
-                        <h3><span class="editable-word">Foreign</span> Account Information (FBAR)</h3>
+                        <h3><span id="section-heading-foreign"><span id="word-foreign" class="editable-word">Foreign</span> Account Information (FBAR)</span></h3>
                         <div class="foreign-grid">
                             <div class="form-field">
-                                <label>23. <span class="editable-word">Foreign</span> bank account maximum balance</label>
+                                <label>23. <span id="label-23" class="editable-word">Foreign</span> bank account maximum balance</label>
                                 <span class="static-text" id="foreign-balance">$0.00</span>
                                 <input type="text" id="foreign-balance-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>24. <span class="editable-word">Country</span> of foreign account</label>
+                                <label>24. <span id="label-24" class="editable-word">Country</span> of foreign account</label>
                                 <span class="static-text" id="foreign-country">N/A</span>
                                 <input type="text" id="foreign-country-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>25. <span class="editable-word">Foreign</span> tax paid</label>
+                                <label>25. <span id="label-25" class="editable-word">Foreign</span> tax paid</label>
                                 <span class="static-text" id="foreign-tax">$0.00</span>
                                 <input type="text" id="foreign-tax-input" class="display-none">
                             </div>
@@ -234,22 +264,22 @@
                     </div>
                     
                     <div class="form-section crazy-only alternative-min">
-                        <h3><span class="editable-word">Alternative</span> Minimum Tax (AMT)</h3>
+                        <h3><span id="section-heading-amt"><span id="word-amt" class="editable-word">Alternative</span> Minimum Tax (AMT)</span></h3>
                         <div class="amt-grid">
                             <div class="form-field">
-                                <label>26. <span class="editable-word">AMT</span> income adjustments</label>
+                                <label>26. <span id="label-26" class="editable-word">AMT</span> income adjustments</label>
                                 <span class="static-text" id="amt-adjustments">$0.00</span>
                                 <input type="text" id="amt-adjustments-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>27. <span class="editable-word">Tentative</span> minimum tax</label>
+                                <label>27. <span id="label-27" class="editable-word">Tentative</span> minimum tax</label>
                                 <span class="static-text" id="tentative-amt">$0.00</span>
                                 <input type="text" id="tentative-amt-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>28. <span class="editable-word">AMT</span> foreign tax credit</label>
+                                <label>28. <span id="label-28" class="editable-word">AMT</span> foreign tax credit</label>
                                 <span class="static-text" id="amt-foreign-credit">$0.00</span>
                                 <input type="text" id="amt-foreign-credit-input" class="display-none">
                             </div>
@@ -257,28 +287,28 @@
                     </div>
                     
                     <div class="form-section crazy-only depreciation-info">
-                        <h3><span class="editable-word">Depreciation</span> and Asset Information</h3>
+                        <h3><span id="section-heading-depreciation"><span id="word-depreciation" class="editable-word">Depreciation</span> and Asset Information</span></h3>
                         <div class="depreciation-grid">
                             <div class="form-field">
-                                <label>29. <span class="editable-word">Section</span> 179 deduction</label>
+                                <label>29. <span id="label-29" class="editable-word">Section</span> 179 deduction</label>
                                 <span class="static-text" id="section179">$0.00</span>
                                 <input type="text" id="section179-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>30. <span class="editable-word">Bonus</span> depreciation claimed</label>
+                                <label>30. <span id="label-30" class="editable-word">Bonus</span> depreciation claimed</label>
                                 <span class="static-text" id="bonus-depreciation">$0.00</span>
                                 <input type="text" id="bonus-depreciation-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>31. <span class="editable-word">Like-kind</span> exchange basis</label>
+                                <label>31. <span id="label-31" class="editable-word">Like-kind</span> exchange basis</label>
                                 <span class="static-text" id="like-kind-basis">$0.00</span>
                                 <input type="text" id="like-kind-basis-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>32. <span class="editable-word">Passive</span> activity loss carryover</label>
+                                <label>32. <span id="label-32" class="editable-word">Passive</span> activity loss carryover</label>
                                 <span class="static-text" id="passive-loss">$0.00</span>
                                 <input type="text" id="passive-loss-input" class="display-none">
                             </div>
@@ -287,22 +317,22 @@
                     
                     <!-- State Information -->
                     <div class="form-section state-info">
-                        <h3><span class="editable-word">State</span> Information</h3>
+                        <h3><span id="section-heading-state"><span id="word-state" class="editable-word">State</span> Information</span></h3>
                         <div class="state-grid">
                             <div class="form-field">
-                                <label>33. <span class="editable-word">State</span></label>
+                                <label>33. <span id="label-33" class="editable-word">State</span></label>
                                 <span class="static-text" id="state">CA</span>
                                 <input type="text" id="state-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>34. <span class="editable-word">State</span> wages, tips, etc.</label>
+                                <label>34. <span id="label-34" class="editable-word">State</span> wages, tips, etc.</label>
                                 <span class="static-text" id="state-wages">$45,000.00</span>
                                 <input type="text" id="state-wages-input" class="display-none">
                             </div>
                             
                             <div class="form-field">
-                                <label>35. <span class="editable-word">State</span> income tax</label>
+                                <label>35. <span id="label-35" class="editable-word">State</span> income tax</label>
                                 <span class="static-text" id="state-tax">$2,250.00</span>
                                 <input type="text" id="state-tax-input" class="display-none">
                             </div>
@@ -328,17 +358,17 @@
                 <h2 id="game-over-title"></h2>
                 <div id="game-over-message"></div>
                 <div class="game-stats">
-                    <p>Spells Documented: <span id="final-completed">0</span> / <span id="final-total">0</span></p>
-                    <p>Ritual Time: <span id="final-time">0</span>s</p>
-                    <p>Magical Difficulty: <span id="final-difficulty">Normal</span></p>
-                    <p>Enchantment Accuracy: <span id="accuracy-rate">100%</span></p>
+                    <p><span id="gameover-label-completed">Spells Documented</span>: <span id="final-completed">0</span> / <span id="final-total">0</span></p>
+                    <p><span id="gameover-label-time">Ritual Time</span>: <span id="final-time">0</span>s</p>
+                    <p><span id="gameover-label-difficulty">Magical Difficulty</span>: <span id="final-difficulty">Normal</span></p>
+                    <p><span id="gameover-label-accuracy">Enchantment Accuracy</span>: <span id="accuracy-rate">100%</span></p>
                 </div>
                 
                 <div class="game-over-buttons">
-                    <button class="game-btn" id="restart-btn">Cast Again</button>
-                    <button class="game-btn secondary" id="difficulty-btn">Change Magic Level</button>
+                    <button class="game-btn" id="restart-btn"><span id="gameover-btn-restart">Cast Again</span></button>
+                    <button class="game-btn secondary" id="difficulty-btn"><span id="gameover-btn-difficulty">Change Magic Level</span></button>
                     <button class="game-btn secondary" onclick="window.location.href='../index.html'">
-                        Return to Coven
+                        <span id="gameover-btn-home">Return to Coven</span>
                     </button>
                 </div>
             </div>
