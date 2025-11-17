@@ -746,6 +746,139 @@ class HolidayResources {
         };
         return messages[this.currentHoliday];
     }
+    
+    // Color Themes for Each Holiday
+    getColorTheme() {
+        const themes = {
+            halloween: {
+                primary: '#ff6b35',      // Orange
+                secondary: '#2d1b69',    // Deep Purple
+                accent: '#f7931e',       // Bright Orange
+                background: '#1a1a2e',   // Dark Blue-Black
+                text: '#f7f7f7',         // Off White
+                gradient1: '#2d1b69',    // Deep Purple
+                gradient2: '#16213e',    // Navy
+                gradient3: '#0f172a'     // Dark Navy
+            },
+            thanksgiving: {
+                primary: '#d2691e',      // Saddle Brown
+                secondary: '#8b4513',    // Brown
+                accent: '#ff8c00',       // Dark Orange
+                background: '#2c1810',   // Dark Brown
+                text: '#ffd700',         // Gold
+                gradient1: '#8b4513',    // Brown
+                gradient2: '#654321',    // Dark Brown
+                gradient3: '#3d2817'     // Darker Brown
+            },
+            christmas: {
+                primary: '#c41e3a',      // Christmas Red
+                secondary: '#0f5132',    // Christmas Green
+                accent: '#ffd700',       // Gold
+                background: '#0a3d2c',   // Dark Green
+                text: '#ffffff',         // White
+                gradient1: '#0f5132',    // Dark Green
+                gradient2: '#1a5c42',    // Medium Green
+                gradient3: '#0a3d2c'     // Darker Green
+            },
+            newyear: {
+                primary: '#ffd700',      // Gold
+                secondary: '#000080',    // Navy Blue
+                accent: '#ff69b4',       // Hot Pink
+                background: '#0a0a1a',   // Very Dark Blue
+                text: '#ffffff',         // White
+                gradient1: '#000080',    // Navy
+                gradient2: '#1a1a3d',    // Dark Blue
+                gradient3: '#0a0a1a'     // Darker Blue
+            },
+            valentines: {
+                primary: '#ff1493',      // Deep Pink
+                secondary: '#c71585',    // Medium Violet Red
+                accent: '#ff69b4',       // Hot Pink
+                background: '#2d1b3d',   // Dark Purple
+                text: '#ffe4e1',         // Misty Rose
+                gradient1: '#c71585',    // Violet Red
+                gradient2: '#8b1874',    // Dark Violet Red
+                gradient3: '#4a0e3d'     // Very Dark Purple
+            },
+            stpatricks: {
+                primary: '#228b22',      // Forest Green
+                secondary: '#006400',    // Dark Green
+                accent: '#ffd700',       // Gold
+                background: '#0d3d0d',   // Very Dark Green
+                text: '#f0fff0',         // Honeydew
+                gradient1: '#228b22',    // Forest Green
+                gradient2: '#1a6b1a',    // Medium Green
+                gradient3: '#0d3d0d'     // Dark Green
+            },
+            easter: {
+                primary: '#ff69b4',      // Hot Pink
+                secondary: '#87ceeb',    // Sky Blue
+                accent: '#ffff00',       // Yellow
+                background: '#e6f3ff',   // Light Blue
+                text: '#333333',         // Dark Gray
+                gradient1: '#87ceeb',    // Sky Blue
+                gradient2: '#b0d4f1',    // Light Blue
+                gradient3: '#d4e9ff'     // Very Light Blue
+            },
+            spring: {
+                primary: '#ff69b4',      // Pink
+                secondary: '#90ee90',    // Light Green
+                accent: '#ffb6c1',       // Light Pink
+                background: '#e8f5e9',   // Very Light Green
+                text: '#2d5016',         // Dark Green
+                gradient1: '#90ee90',    // Light Green
+                gradient2: '#b4f0b4',    // Lighter Green
+                gradient3: '#d4f5d4'     // Very Light Green
+            },
+            summer: {
+                primary: '#ffa500',      // Orange
+                secondary: '#00bfff',    // Deep Sky Blue
+                accent: '#ffff00',       // Yellow
+                background: '#87ceeb',   // Sky Blue
+                text: '#ffffff',         // White
+                gradient1: '#00bfff',    // Sky Blue
+                gradient2: '#5fd3ff',    // Light Blue
+                gradient3: '#87ceeb'     // Sky Blue
+            },
+            independence: {
+                primary: '#b22234',      // Red
+                secondary: '#3c3b6e',    // Blue
+                accent: '#ffffff',       // White
+                background: '#1a1a2e',   // Dark Blue
+                text: '#ffffff',         // White
+                gradient1: '#3c3b6e',    // Blue
+                gradient2: '#2a2a4d',    // Dark Blue
+                gradient3: '#1a1a2e'     // Darker Blue
+            },
+            fall: {
+                primary: '#d2691e',      // Chocolate
+                secondary: '#8b4513',    // Saddle Brown
+                accent: '#ff8c00',       // Dark Orange
+                background: '#2c1810',   // Dark Brown
+                text: '#ffa500',         // Orange
+                gradient1: '#8b4513',    // Brown
+                gradient2: '#654321',    // Dark Brown
+                gradient3: '#3d2817'     // Darker Brown
+            }
+        };
+        return themes[this.currentHoliday];
+    }
+    
+    // Apply color theme to document
+    applyColorTheme() {
+        const theme = this.getColorTheme();
+        const root = document.documentElement;
+        
+        // Set CSS custom properties
+        root.style.setProperty('--holiday-primary', theme.primary);
+        root.style.setProperty('--holiday-secondary', theme.secondary);
+        root.style.setProperty('--holiday-accent', theme.accent);
+        root.style.setProperty('--holiday-background', theme.background);
+        root.style.setProperty('--holiday-text', theme.text);
+        root.style.setProperty('--holiday-gradient1', theme.gradient1);
+        root.style.setProperty('--holiday-gradient2', theme.gradient2);
+        root.style.setProperty('--holiday-gradient3', theme.gradient3);
+    }
 }
 
 // Create a global instance

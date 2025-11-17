@@ -373,6 +373,9 @@ class TaxesGame {
 
 // Initialize game when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Apply color theme
+    holidayResources.applyColorTheme();
+    
     // Populate holiday-specific content
     document.getElementById('page-title').textContent = holidayResources.getTaxesGameTitle().replace(/[^\w\s]/g, '');
     document.getElementById('taxes-title').textContent = holidayResources.getTaxesGameTitle();

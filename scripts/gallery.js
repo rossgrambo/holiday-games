@@ -1,6 +1,9 @@
 /* Gallery Page Functionality */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply color theme
+    holidayResources.applyColorTheme();
+    
     // Populate holiday-specific content
     document.getElementById('page-title').textContent = holidayResources.getGalleryTitle().replace(/[^\w\s]/g, '') + ' - Gallery';
     document.getElementById('gallery-title').textContent = holidayResources.getGalleryTitle();

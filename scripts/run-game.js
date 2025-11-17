@@ -619,6 +619,9 @@ class RunGame {
 
 // Initialize game when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply color theme
+    holidayResources.applyColorTheme();
+    
     // Populate holiday-specific content
     document.getElementById('page-title').textContent = holidayResources.getRunGameTitle().replace(/[^\w\s!]/g, '');
     document.getElementById('run-title').textContent = holidayResources.getRunGameTitle();

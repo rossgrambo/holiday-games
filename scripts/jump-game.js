@@ -667,6 +667,9 @@ class JumpGame {
 
 // Initialize game when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply color theme
+    holidayResources.applyColorTheme();
+    
     // Populate holiday-specific content
     document.getElementById('page-title').textContent = holidayResources.getJumpGameTitle().replace(/[^\w\s!]/g, '');
     document.getElementById('jump-title').textContent = holidayResources.getJumpGameTitle();

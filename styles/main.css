@@ -1,4 +1,17 @@
 /* Main Styles */
+
+/* CSS Custom Properties for Holiday Themes */
+:root {
+    --holiday-primary: #ff6b35;
+    --holiday-secondary: #2d1b69;
+    --holiday-accent: #f7931e;
+    --holiday-background: #1a1a2e;
+    --holiday-text: #f7f7f7;
+    --holiday-gradient1: #2d1b69;
+    --holiday-gradient2: #16213e;
+    --holiday-gradient3: #0f172a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +20,10 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1a0d2e 0%, #2d1b47 50%, #0f0f23 100%);
+    background: linear-gradient(135deg, var(--holiday-gradient1) 0%, var(--holiday-gradient2) 50%, var(--holiday-gradient3) 100%);
     min-height: 100vh;
     overflow-x: hidden;
+    color: var(--holiday-text);
 }
 
 .container {
@@ -21,18 +35,20 @@ body {
 header {
     text-align: center;
     margin-bottom: 40px;
-    color: white;
+    color: var(--holiday-text);
 }
 
 header h1 {
     font-size: 3em;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: var(--holiday-accent);
 }
 
 header p {
     font-size: 1.2em;
     opacity: 0.9;
+    color: var(--holiday-text);
 }
 
 /* Gallery Styles */
@@ -48,21 +64,21 @@ header p {
 }
 
 .game-card {
-    background: linear-gradient(135deg, #2a1a3e 0%, #3d2b52 100%);
-    border: 2px solid #ff6b35;
+    background: linear-gradient(135deg, var(--holiday-secondary) 0%, var(--holiday-gradient2) 100%);
+    border: 2px solid var(--holiday-primary);
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    color: #f8f8ff;
+    color: var(--holiday-text);
 }
 
 .game-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
-    border-color: #ff8c42;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--holiday-accent);
 }
 
 .game-card.coming-soon {
@@ -89,21 +105,21 @@ header p {
 .game-card h3 {
     font-size: 2em;
     margin-bottom: 15px;
-    color: #ff8c42;
+    color: var(--holiday-accent);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .game-card p {
     font-size: 1.1em;
-    color: #e2e8f0;
+    color: var(--holiday-text);
     margin-bottom: 25px;
     line-height: 1.4;
 }
 
 .play-btn {
-    background: linear-gradient(135deg, #ff6b35, #d63031);
+    background: linear-gradient(135deg, var(--holiday-primary), var(--holiday-accent));
     color: white;
-    border: 2px solid #ff8c42;
+    border: 2px solid var(--holiday-accent);
     padding: 15px 30px;
     font-size: 1.2em;
     border-radius: 50px;
@@ -111,13 +127,13 @@ header p {
     transition: all 0.3s ease;
     font-weight: bold;
     min-width: 150px;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .play-btn:hover:not(:disabled) {
-    background: linear-gradient(135deg, #ff8c42, #ff6b35);
+    background: linear-gradient(135deg, var(--holiday-accent), var(--holiday-primary));
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .play-btn:disabled {
@@ -141,13 +157,15 @@ header p {
 }
 
 .reward-content {
-    background: white;
+    background: linear-gradient(135deg, var(--holiday-gradient2), var(--holiday-gradient3));
     padding: 40px;
     border-radius: 20px;
     text-align: center;
     max-width: 400px;
     width: 90%;
     animation: slideIn 0.3s ease;
+    border: 3px solid var(--holiday-primary);
+    color: var(--holiday-text);
 }
 
 .reward-animation {
@@ -158,18 +176,18 @@ header p {
 
 .reward-content h2 {
     font-size: 2.5em;
-    color: #333;
+    color: var(--holiday-accent);
     margin-bottom: 20px;
 }
 
 .reward-content p {
     font-size: 1.2em;
-    color: #666;
+    color: var(--holiday-text);
     margin-bottom: 15px;
 }
 
 .reward-btn {
-    background: linear-gradient(135deg, #ff6b35, #d63031);
+    background: linear-gradient(135deg, var(--holiday-primary), var(--holiday-accent));
     color: white;
     border: none;
     padding: 12px 25px;
@@ -181,8 +199,8 @@ header p {
 }
 
 .reward-btn.secondary {
-    background: #ccc;
-    color: #333;
+    background: var(--holiday-secondary);
+    color: var(--holiday-text);
 }
 
 .reward-btn:hover {
