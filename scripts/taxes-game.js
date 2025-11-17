@@ -286,6 +286,8 @@ class TaxesGame {
         const gameTime = Math.floor((Date.now() - this.gameStartTime) / 1000);
         
         // Show completion screen
+        const icon = holidayResources.getTaxesGameIcon();
+        document.getElementById('game-over-title').textContent = `${icon} Magical Forms Complete!`;
         document.getElementById('final-completed').textContent = this.fieldsCompleted;
         document.getElementById('final-total').textContent = this.totalFields;
         document.getElementById('final-time').textContent = gameTime;
@@ -371,6 +373,30 @@ class TaxesGame {
 
 // Initialize game when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Populate holiday-specific content
+    document.getElementById('page-title').textContent = holidayResources.getTaxesGameTitle().replace(/[^\w\s]/g, '');
+    document.getElementById('taxes-title').textContent = holidayResources.getTaxesGameTitle();
+    document.getElementById('taxes-description').textContent = holidayResources.getTaxesGameDescription();
+    document.getElementById('form-header').textContent = holidayResources.getTaxesFormHeader();
+    document.getElementById('form-year').textContent = holidayResources.getTaxesFormYear();
+    
+    const icons = holidayResources.getDifficultyIcons();
+    document.getElementById('diff-easy-icon').textContent = icons.easy;
+    document.getElementById('diff-medium-icon').textContent = icons.medium;
+    document.getElementById('diff-hard-icon').textContent = icons.hard;
+    document.getElementById('diff-crazy-icon').textContent = icons.crazy;
+    
+    const diffNames = holidayResources.getTaxesDifficultyNames();
+    const diffDescs = holidayResources.getTaxesDifficultyDescriptions();
+    document.getElementById('taxes-diff-easy-name').textContent = diffNames.easy;
+    document.getElementById('taxes-diff-easy-desc').textContent = diffDescs.easy;
+    document.getElementById('taxes-diff-medium-name').textContent = diffNames.medium;
+    document.getElementById('taxes-diff-medium-desc').textContent = diffDescs.medium;
+    document.getElementById('taxes-diff-hard-name').textContent = diffNames.hard;
+    document.getElementById('taxes-diff-hard-desc').textContent = diffDescs.hard;
+    document.getElementById('taxes-diff-crazy-name').textContent = diffNames.crazy;
+    document.getElementById('taxes-diff-crazy-desc').textContent = diffDescs.crazy;
+    
     window.taxesGame = new TaxesGame();
     
     // Add some fun easter eggs

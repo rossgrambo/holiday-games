@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skeleton Jump! - Halloween Games</title>
+    <title id="page-title">Jump Game</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/jump-game.css">
 </head>
@@ -12,32 +12,32 @@
         <!-- Difficulty Selection Screen -->
         <div id="difficulty-screen" class="screen">
             <div class="difficulty-content">
-                <h1>💀 Skeleton Jump!</h1>
-                <p>Guide the spooky skeleton through a bone-chilling pumpkin obstacle course!</p>
+                <h1 id="jump-title"></h1>
+                <p id="jump-description"></p>
                 
                 <div class="difficulty-grid">
                     <button class="difficulty-btn" data-difficulty="toddler">
-                        <span class="difficulty-icon">👻</span>
-                        <span class="difficulty-name">Baby Bones</span>
-                        <span class="difficulty-desc">Tiny hops</span>
+                        <span class="difficulty-icon" id="diff-easy-icon"></span>
+                        <span class="difficulty-name" id="jump-diff-easy-name"></span>
+                        <span class="difficulty-desc" id="jump-diff-easy-desc"></span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="child">
-                        <span class="difficulty-icon">🎃</span>
-                        <span class="difficulty-name">Pumpkin Patch</span>
-                        <span class="difficulty-desc">More pumpkins</span>
+                        <span class="difficulty-icon" id="diff-medium-icon"></span>
+                        <span class="difficulty-name" id="jump-diff-medium-name"></span>
+                        <span class="difficulty-desc" id="jump-diff-medium-desc"></span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="adult">
-                        <span class="difficulty-icon">🧟</span>
-                        <span class="difficulty-name">Haunted Ground</span>
-                        <span class="difficulty-desc">Bone-breaking</span>
+                        <span class="difficulty-icon" id="diff-hard-icon"></span>
+                        <span class="difficulty-name" id="jump-diff-hard-name"></span>
+                        <span class="difficulty-desc" id="jump-diff-hard-desc"></span>
                     </button>
                     
                     <button class="difficulty-btn hidden" data-difficulty="crazy" id="crazy-btn">
-                        <span class="difficulty-icon">💀</span>
-                        <span class="difficulty-name">SKELETON KING</span>
-                        <span class="difficulty-desc">Impossible!</span>
+                        <span class="difficulty-icon" id="diff-crazy-icon"></span>
+                        <span class="difficulty-name" id="jump-diff-crazy-name"></span>
+                        <span class="difficulty-desc" id="jump-diff-crazy-desc"></span>
                     </button>
                 </div>
                 
@@ -59,7 +59,6 @@
                 </div>
                 
                 <div class="jump-instruction" id="jump-instruction">
-                    💀 TAP TO JUMP! 💀
                 </div>
             </div>
             
@@ -97,6 +96,8 @@
         </div>
     </div>
     
+    <script src="../resources.js"></script>
+    <script src="../resources.js"></script>
     <script src="../main.js"></script>
     <script src="../scripts/jump-game.js"></script>
     <script src="../scripts/falling-sprites.js"></script>

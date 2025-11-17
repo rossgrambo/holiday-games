@@ -308,7 +308,7 @@ class RunGame {
         if (this.distance >= this.difficulties[this.difficulty].goalDistance) {
             this.winGame();
         } else if (this.zombie.y >= this.camera.y) {
-            this.loseGame('The zombie caught you!');
+            this.loseGame(holidayResources.getRunDefeatMessage());
         }
         
         this.gameLoop = requestAnimationFrame((time) => this.update(time));
@@ -557,8 +557,7 @@ class RunGame {
         
         const settings = this.difficulties[this.difficulty];
         document.getElementById('game-over-title').textContent = 'Victory!';
-        document.getElementById('game-over-message').textContent = 
-            'You escaped the graveyard! The zombie couldn\'t catch you!';
+        document.getElementById('game-over-message').textContent = holidayResources.getRunVictoryMessage();
         document.getElementById('final-distance').textContent = Math.floor(this.distance);
         document.getElementById('final-time').textContent = Math.floor(this.gameTime);
         document.getElementById('final-difficulty').textContent = settings.name;
@@ -620,6 +619,29 @@ class RunGame {
 
 // Initialize game when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Populate holiday-specific content
+    document.getElementById('page-title').textContent = holidayResources.getRunGameTitle().replace(/[^\w\s!]/g, '');
+    document.getElementById('run-title').textContent = holidayResources.getRunGameTitle();
+    document.getElementById('run-description').textContent = holidayResources.getRunGameDescription();
+    document.getElementById('zombie-warning').textContent = holidayResources.getRunGameWarning();
+    
+    const icons = holidayResources.getDifficultyIcons();
+    document.getElementById('diff-easy-icon').textContent = icons.easy;
+    document.getElementById('diff-medium-icon').textContent = icons.medium;
+    document.getElementById('diff-hard-icon').textContent = icons.hard;
+    document.getElementById('diff-crazy-icon').textContent = icons.crazy;
+    
+    const diffNames = holidayResources.getRunDifficultyNames();
+    const diffDescs = holidayResources.getRunDifficultyDescriptions();
+    document.getElementById('run-diff-easy-name').textContent = diffNames.easy;
+    document.getElementById('run-diff-easy-desc').textContent = diffDescs.easy;
+    document.getElementById('run-diff-medium-name').textContent = diffNames.medium;
+    document.getElementById('run-diff-medium-desc').textContent = diffDescs.medium;
+    document.getElementById('run-diff-hard-name').textContent = diffNames.hard;
+    document.getElementById('run-diff-hard-desc').textContent = diffDescs.hard;
+    document.getElementById('run-diff-crazy-name').textContent = diffNames.crazy;
+    document.getElementById('run-diff-crazy-desc').textContent = diffDescs.crazy;
+    
     const game = new RunGame();
     
     // Prevent default touch behaviors for game area

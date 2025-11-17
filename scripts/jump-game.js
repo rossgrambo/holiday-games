@@ -195,10 +195,13 @@ class JumpGame {
             this.player.isJumping = true;
             this.player.jumpVelocity = this.player.jumpPower;
             
-            // Hide instruction after first jump
+            // Show instruction after first jump
             if (this.instructionShown) {
                 this.instructionShown = false;
-                document.getElementById('jump-instruction').classList.add('hidden');
+                const instruction = document.getElementById('jump-instruction');
+                if (instruction) {
+                    instruction.classList.add('hidden');
+                }
             }
         }
     }
@@ -241,7 +244,11 @@ class JumpGame {
         this.scheduleNextObstacle();
         
         // Show instruction
-        document.getElementById('jump-instruction').classList.remove('hidden');
+        const instruction = document.getElementById('jump-instruction');
+        if (instruction) {
+            instruction.textContent = holidayResources.getJumpInstruction();
+            instruction.classList.remove('hidden');
+        }
         
         this.showScreen('game');
         this.gameLoop = requestAnimationFrame((time) => this.update(time));
@@ -405,7 +412,7 @@ class JumpGame {
                 playerTop < obstacleBottom) {
                 
                 obstacle.hit = true;
-                this.loseGame('You hit a jack-o\'-lantern!');
+                this.loseGame(holidayResources.getJumpDefeatMessage());
             }
         });
     }
@@ -596,8 +603,7 @@ class JumpGame {
         
         const settings = this.difficulties[this.difficulty];
         document.getElementById('game-over-title').textContent = 'Victory!';
-        document.getElementById('game-over-message').textContent = 
-            'The skeleton made it to safety! Great jumping!';
+        document.getElementById('game-over-message').textContent = holidayResources.getJumpVictoryMessage();
         document.getElementById('final-distance').textContent = Math.floor(this.distance);
         document.getElementById('final-time').textContent = Math.floor(this.gameTime);
         document.getElementById('final-difficulty').textContent = settings.name;
@@ -661,6 +667,29 @@ class JumpGame {
 
 // Initialize game when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Populate holiday-specific content
+    document.getElementById('page-title').textContent = holidayResources.getJumpGameTitle().replace(/[^\w\s!]/g, '');
+    document.getElementById('jump-title').textContent = holidayResources.getJumpGameTitle();
+    document.getElementById('jump-description').textContent = holidayResources.getJumpGameDescription();
+    document.getElementById('jump-instruction').textContent = holidayResources.getJumpInstruction();
+    
+    const icons = holidayResources.getDifficultyIcons();
+    document.getElementById('diff-easy-icon').textContent = icons.easy;
+    document.getElementById('diff-medium-icon').textContent = icons.medium;
+    document.getElementById('diff-hard-icon').textContent = icons.hard;
+    document.getElementById('diff-crazy-icon').textContent = icons.crazy;
+    
+    const diffNames = holidayResources.getJumpDifficultyNames();
+    const diffDescs = holidayResources.getJumpDifficultyDescriptions();
+    document.getElementById('jump-diff-easy-name').textContent = diffNames.easy;
+    document.getElementById('jump-diff-easy-desc').textContent = diffDescs.easy;
+    document.getElementById('jump-diff-medium-name').textContent = diffNames.medium;
+    document.getElementById('jump-diff-medium-desc').textContent = diffDescs.medium;
+    document.getElementById('jump-diff-hard-name').textContent = diffNames.hard;
+    document.getElementById('jump-diff-hard-desc').textContent = diffDescs.hard;
+    document.getElementById('jump-diff-crazy-name').textContent = diffNames.crazy;
+    document.getElementById('jump-diff-crazy-desc').textContent = diffDescs.crazy;
+    
     const game = new JumpGame();
     
     // Prevent default touch behaviors for game area

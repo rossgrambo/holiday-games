@@ -53,22 +53,44 @@ class FallingSprites {
             }
         }
 
-        const spriteType = Math.random() < 0.5 ? 'skull' : 'pumpkin';
-        const spriteElement = document.createElement('img');
+        const spriteTypes = holidayResources.getSpriteTypes();
+        const spriteType = spriteTypes[Math.floor(Math.random() * spriteTypes.length)];
         
-        // Calculate relative path to sprites folder based on current HTML file location
-        // Check if we're in a subdirectory by looking at the current HTML file path
-        const currentPath = window.location.pathname;
-        const inSubdirectory = currentPath.includes('/games/');
-        const pathPrefix = inSubdirectory ? '../' : '';
-        spriteElement.src = `${pathPrefix}sprites/${spriteType}.png`;
-        spriteElement.style.cssText = `
-            position: absolute;
-            width: ${this.config.spriteSize}px;
-            height: ${this.config.spriteSize}px;
-            pointer-events: none;
-            transition: opacity ${this.config.fadeOutTime}ms ease-out;
-        `;
+        // Check if we have an image for this sprite type, otherwise use emoji
+        let spriteElement;
+        if (holidayResources.hasImageSprite(spriteType)) {
+            // Use image sprite
+            spriteElement = document.createElement('img');
+            
+            // Calculate relative path to sprites folder based on current HTML file location
+            const currentPath = window.location.pathname;
+            const inSubdirectory = currentPath.includes('/games/');
+            const pathPrefix = inSubdirectory ? '../' : '';
+            spriteElement.src = `${pathPrefix}sprites/${spriteType}.png`;
+            spriteElement.style.cssText = `
+                position: absolute;
+                width: ${this.config.spriteSize}px;
+                height: ${this.config.spriteSize}px;
+                pointer-events: none;
+                transition: opacity ${this.config.fadeOutTime}ms ease-out;
+            `;
+        } else {
+            // Use emoji sprite
+            spriteElement = document.createElement('div');
+            spriteElement.textContent = holidayResources.getSpriteDisplay(spriteType);
+            spriteElement.style.cssText = `
+                position: absolute;
+                width: ${this.config.spriteSize}px;
+                height: ${this.config.spriteSize}px;
+                pointer-events: none;
+                transition: opacity ${this.config.fadeOutTime}ms ease-out;
+                font-size: ${this.config.spriteSize * 0.8}px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            `;
+        }
 
         // Random horizontal position
         const startX = Math.random() * (window.innerWidth - this.config.spriteSize);

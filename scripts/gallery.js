@@ -1,6 +1,27 @@
 /* Gallery Page Functionality */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Populate holiday-specific content
+    document.getElementById('page-title').textContent = holidayResources.getGalleryTitle().replace(/[^\w\s]/g, '') + ' - Gallery';
+    document.getElementById('gallery-title').textContent = holidayResources.getGalleryTitle();
+    document.getElementById('gallery-subtitle').textContent = holidayResources.getGallerySubtitle();
+    
+    document.getElementById('run-game-icon').textContent = holidayResources.getRunGameIcon();
+    document.getElementById('run-game-title').textContent = holidayResources.getRunGameTitle().replace(/[^\w\s!]/g, '');
+    document.getElementById('run-game-desc').textContent = holidayResources.getRunGameDescription();
+    
+    document.getElementById('jump-game-icon').textContent = holidayResources.getJumpGameIcon();
+    document.getElementById('jump-game-title').textContent = holidayResources.getJumpGameTitle().replace(/[^\w\s!]/g, '');
+    document.getElementById('jump-game-desc').textContent = holidayResources.getJumpGameDescription();
+    
+    document.getElementById('taxes-game-icon').textContent = holidayResources.getTaxesGameIcon();
+    document.getElementById('taxes-game-title').textContent = holidayResources.getTaxesGameTitle().replace(/[^\w\s]/g, '');
+    document.getElementById('taxes-game-desc').textContent = holidayResources.getTaxesGameDescription();
+    
+    document.getElementById('coming-soon-icon').textContent = holidayResources.getComingSoonIcon();
+    document.getElementById('coming-soon-title').textContent = holidayResources.getComingSoonTitle();
+    document.getElementById('coming-soon-desc').textContent = holidayResources.getComingSoonDescription();
+    
     const gameCards = document.querySelectorAll('.game-card[data-game]');
     
     gameCards.forEach(card => {

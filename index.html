@@ -3,50 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halloween Games - Spooky Gallery</title>
+    <title id="page-title">Holiday Games</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎃 Halloween Games</h1>
-            <p>Spooky touch-friendly games for tablets</p>
+            <h1 id="gallery-title"></h1>
+            <p id="gallery-subtitle"></p>
         </header>
         
         <main class="gallery">
             <div class="game-grid">
                 <div class="game-card" data-game="run">
-                    <div class="game-icon">🧟‍♂️</div>
-                    <h3>Zombie Escape!</h3>
-                    <p>Sprint through the haunted graveyard before the undead catch you!</p>
+                    <div class="game-icon" id="run-game-icon"></div>
+                    <h3 id="run-game-title"></h3>
+                    <p id="run-game-desc"></p>
                     <button class="play-btn">Play Now</button>
                 </div>
                 
                 <div class="game-card" data-game="jump">
-                    <div class="game-icon">💀</div>
-                    <h3>Skeleton Jump!</h3>
-                    <p>Guide the spooky skeleton over jack-o'-lanterns in this bone-chilling adventure!</p>
+                    <div class="game-icon" id="jump-game-icon"></div>
+                    <h3 id="jump-game-title"></h3>
+                    <p id="jump-game-desc"></p>
                     <button class="play-btn">Play Now</button>
                 </div>
                 
                 <div class="game-card" data-game="taxes">
-                    <div class="game-icon">🧙‍♀️</div>
-                    <h3>Taxes</h3>
-                    <p>Help the witch complete her magical paperwork before midnight strikes!</p>
+                    <div class="game-icon" id="taxes-game-icon"></div>
+                    <h3 id="taxes-game-title"></h3>
+                    <p id="taxes-game-desc"></p>
                     <button class="play-btn">Play Now</button>
                 </div>
                 
                 <!-- Placeholder for future games -->
                 <div class="game-card coming-soon">
-                    <div class="game-icon">🦇</div>
-                    <h3>More Scares Coming</h3>
-                    <p>More haunting games brewing in our cauldron!</p>
+                    <div class="game-icon" id="coming-soon-icon"></div>
+                    <h3 id="coming-soon-title"></h3>
+                    <p id="coming-soon-desc"></p>
                     <button class="play-btn" disabled>Coming Soon</button>
                 </div>
             </div>
         </main>
     </div>
     
+    <script src="resources.js"></script>
     <script src="main.js"></script>
     <script src="scripts/gallery.js"></script>
     <script src="scripts/falling-sprites.js"></script>

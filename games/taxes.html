@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxes - Halloween Games</title>
+    <title id="page-title">Taxes Game</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/taxes-game.css">
 </head>
@@ -12,32 +12,32 @@
         <!-- Difficulty Selection Screen -->
         <div id="difficulty-screen" class="screen">
             <div class="difficulty-content">
-                <h1>🧙‍♀️ Taxes</h1>
-                <p>Help the witch complete her magical paperwork before the stroke of midnight!</p>
+                <h1 id="taxes-title"></h1>
+                <p id="taxes-description"></p>
                 
                 <div class="difficulty-grid">
                     <button class="difficulty-btn" data-difficulty="toddler">
-                        <span class="difficulty-icon">👻</span>
-                        <span class="difficulty-name">Apprentice</span>
-                        <span class="difficulty-desc">Simple spells</span>
+                        <span class="difficulty-icon" id="diff-easy-icon"></span>
+                        <span class="difficulty-name" id="taxes-diff-easy-name"></span>
+                        <span class="difficulty-desc" id="taxes-diff-easy-desc"></span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="child">
-                        <span class="difficulty-icon">🎃</span>
-                        <span class="difficulty-name">Novice Witch</span>
-                        <span class="difficulty-desc">Basic potions</span>
+                        <span class="difficulty-icon" id="diff-medium-icon"></span>
+                        <span class="difficulty-name" id="taxes-diff-medium-name"></span>
+                        <span class="difficulty-desc" id="taxes-diff-medium-desc"></span>
                     </button>
                     
                     <button class="difficulty-btn" data-difficulty="adult">
-                        <span class="difficulty-icon">🧙‍♀️</span>
-                        <span class="difficulty-name">Master Witch</span>
-                        <span class="difficulty-desc">Complex magic</span>
+                        <span class="difficulty-icon" id="diff-hard-icon"></span>
+                        <span class="difficulty-name" id="taxes-diff-hard-name"></span>
+                        <span class="difficulty-desc" id="taxes-diff-hard-desc"></span>
                     </button>
                     
                     <button class="difficulty-btn hidden" data-difficulty="crazy" id="crazy-btn">
-                        <span class="difficulty-icon">💀</span>
-                        <span class="difficulty-name">DARK SORCERER</span>
-                        <span class="difficulty-desc">Forbidden arts!</span>
+                        <span class="difficulty-icon" id="diff-crazy-icon"></span>
+                        <span class="difficulty-name" id="taxes-diff-crazy-name"></span>
+                        <span class="difficulty-desc" id="taxes-diff-crazy-desc"></span>
                     </button>
                 </div>
                 
@@ -51,8 +51,8 @@
         <div id="game-screen" class="screen hidden">
             <div class="tax-form-container">
                 <div class="form-header">
-                    <h2>✨ Magical Registry & Spell License Application ✨</h2>
-                    <div class="tax-year">Halloween 2025</div>
+                    <h2 id="form-header"></h2>
+                    <div class="tax-year" id="form-year"></div>
                 </div>
                 
                 <div class="form-content">
@@ -325,8 +325,8 @@
         <!-- Game Over Screen -->
         <div id="game-over-screen" class="screen hidden">
             <div class="game-over-content">
-                <h2 id="game-over-title">🧙‍♀️ Magical Forms Complete!</h2>
-                <div id="game-over-message">Spook-tacular! You've successfully completed the witch's mystical paperwork before midnight!</div>
+                <h2 id="game-over-title"></h2>
+                <div id="game-over-message"></div>
                 <div class="game-stats">
                     <p>Spells Documented: <span id="final-completed">0</span> / <span id="final-total">0</span></p>
                     <p>Ritual Time: <span id="final-time">0</span>s</p>
@@ -345,6 +345,7 @@
         </div>
     </div>
     
+    <script src="../resources.js"></script>
     <script src="../main.js"></script>
     <script src="../scripts/taxes-game.js"></script>
     <script src="../scripts/falling-sprites.js"></script>
