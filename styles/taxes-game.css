@@ -250,7 +250,7 @@
 .form-field input:not(.filled) {
     background: rgba(239, 68, 68, 0.2);
     border-color: #ef4444;
-    color: #fecaca;
+    color: #000000;
 }
 
 .form-field input:not(.filled):focus {

@@ -8,9 +8,9 @@ class FallingSprites {
         // Configuration variables - easily editable
         this.config = {
             spawnRate: 1000,        // milliseconds between spawns
-            gravity: 0.2,           // gravity strength
+            gravity: 0.1,           // gravity strength
             spriteSize: 100,         // size in pixels
-            initialVelocityY: -8,   // upward velocity when thrown
+            initialVelocityY: -7,   // upward velocity when thrown
             initialVelocityX: 2,    // horizontal velocity range (-2 to +2)
             fadeOutTime: 400,       // fade out duration in ms
             maxSprites: 20          // maximum sprites on screen
@@ -56,7 +56,12 @@ class FallingSprites {
         const spriteType = Math.random() < 0.5 ? 'skull' : 'pumpkin';
         const spriteElement = document.createElement('img');
         
-        spriteElement.src = `sprites/${spriteType}.png`;
+        // Calculate relative path to sprites folder based on current HTML file location
+        // Check if we're in a subdirectory by looking at the current HTML file path
+        const currentPath = window.location.pathname;
+        const inSubdirectory = currentPath.includes('/games/');
+        const pathPrefix = inSubdirectory ? '../' : '';
+        spriteElement.src = `${pathPrefix}sprites/${spriteType}.png`;
         spriteElement.style.cssText = `
             position: absolute;
             width: ${this.config.spriteSize}px;
